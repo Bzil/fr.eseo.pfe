@@ -4,20 +4,26 @@
 	<groupId>fr.eseo</groupId>
 	<artifactId>sensor.api</artifactId>
 	<packaging>war</packaging>
-	<version>1.0-SNAPSHOT</version>	
+	<version>1.0-SNAPSHOT</version>
 	<name>sensor.api Maven Webapp</name>
 	<url>http://maven.apache.org</url>
-	
+
 	<properties>
 		<junit.version>4.11</junit.version>
 		<jersey.version>1.8</jersey.version>
 	</properties>
-	
+
 	<dependencies>
-	
+		<!-- See http://www.mkyong.com/webservices/jax-rs/json-example-with-jersey-jackson/  -->
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-server</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-json</artifactId>
 			<version>${jersey.version}</version>
 		</dependency>
 
@@ -31,6 +37,19 @@
 
 	</dependencies>
 	<build>
-		<finalName>sensor.api</finalName>
+		<finalName>SensorAPI</finalName>
+		<plugins>
+
+			<!-- For Maven Tomcat Plugin -->
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<path>/SensorAPI</path>
+				</configuration>
+			</plugin>
+
+		</plugins>
 	</build>
 </project>
