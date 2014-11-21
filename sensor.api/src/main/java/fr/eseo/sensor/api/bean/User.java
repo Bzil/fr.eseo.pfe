@@ -1,26 +1,41 @@
 package fr.eseo.sensor.api.bean;
 
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 /***
  * This class defini the user who can access the data
  * @author Basile Chapellier
  *
  */
-//@Entity
-//@Table(name="USER")
-public class User {
 
+@Entity
+public class User {
+	
+	/**
+	 * Unique id
+	 */
+	@Id
+	@GeneratedValue
+	private int id;
 	private String lastName;
 	private String firstName;
 	private Date lastConnection;
-	private Role role;
+	@Enumerated
+	private UserRole userRole;
 	
-	public User(String lastName, String firstName, Date lastConnection,	Role role) {
+	protected User() {
+		// for hibernate
+	}
+
+	public User(String lastName, String firstName, Date lastConnection,	UserRole userRole) {
 		super();
 		this.lastName = lastName;
 		this.firstName = firstName;
 		this.lastConnection = lastConnection;
-		this.role = role;
+		this.userRole = userRole;
 	}
 
 	public String getLastName() {
@@ -47,12 +62,19 @@ public class User {
 		this.lastConnection = lastConnection;
 	}
 
-	public Role getRole() {
-		return role;
+	public UserRole getRole() {
+		return userRole;
 	}
 
-	public void setRole(Role role) {
-		this.role = role;
+	public void setRole(UserRole userRole) {
+		this.userRole = userRole;
 	}
 	
+	public int getId() {
+		return id;
+	}
+
+	private void setId(int id) {
+		this.id = id;
+	}
 }

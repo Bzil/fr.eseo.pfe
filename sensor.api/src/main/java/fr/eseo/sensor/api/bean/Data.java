@@ -1,21 +1,25 @@
 package fr.eseo.sensor.api.bean;
 
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 /**
  * Class who define the data send by the sensor
  * @author Basile CHAPELLIER
  *
  */
-//@Entity
-//@Table(name="DATA")
+
+@Entity
 public class Data {
 
 	/**
 	 * Unique id
 	 */
-	 //@Id
-	 //@GeneratedValue
-	 //private int id;
+	 @Id
+	@GeneratedValue
+	private int id;
 	/**
 	 * the date of the mesure
 	 */
@@ -23,12 +27,17 @@ public class Data {
 	/**
 	 * the sensor where the data come from
 	 */
+	@ManyToOne
 	private Sensor sensor;	
 	/**
 	 * The value of the data
 	 */
 	private String value;
 	
+	protected Data() {
+		// for hibernate
+	}
+
 	public Data(Date date, Sensor sensor, String value) {
 		super();
 		this.date = date;
@@ -58,5 +67,13 @@ public class Data {
 
 	public void setValue(String value) {
 		this.value = value;
+	}
+	
+	public int getId() {
+		return id;
+	}
+
+	private void setId(int id) {
+		this.id = id;
 	}
 }

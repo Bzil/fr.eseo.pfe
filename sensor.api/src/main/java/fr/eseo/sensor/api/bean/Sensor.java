@@ -1,21 +1,24 @@
 package fr.eseo.sensor.api.bean;
 
 import java.util.Date;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 /**
  * Cette entité défini les capteurs qui composent l'application
  * @author Basile Chapellier
  *
  */
-//@Entity
-//@Table(name="SENSOR")
+
+@Entity
 public class Sensor {
 
 	/**
 	 * Unique id
 	 */
-	//@Id
-	//@GeneratedValue
-	//private int id;
+	@Id
+	@GeneratedValue
+	private int id;
 	/**
 	 * Date where sensor had been add to the app
 	 */
@@ -23,13 +26,21 @@ public class Sensor {
 	/**
 	 * Type of the data, unity
 	 */
-	private String type;
+	private String unity;
+	/**
+	 * Define what type of graphic
+	 */
+	private SensorType sensorType;
 
+	protected Sensor() {
+		// for hibernate
+	}
 
-	public Sensor(Date addDate, String type) {
+	public Sensor(Date addDate, String unity, SensorType sensorType) {
 		super();
 		this.addDate = addDate;
-		this.type = type;
+		this.unity = unity;
+		this.sensorType = sensorType;
 	}
 
 	public Date getAddDate() {
@@ -40,12 +51,30 @@ public class Sensor {
 		this.addDate = addDate;
 	}
 
-	public String getType() {
-		return type;
+	public String getUnity() {
+		return unity;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	public void setUnity(String unity) {
+		this.unity = unity;
 	}
+
+	public int getId() {
+		return id;
+	}
+
+	private void setId(int id) {
+		this.id = id;
+	}
+
+	public SensorType getSensorType() {
+		return sensorType;
+	}
+
+	public void setSensorType(SensorType sensorType) {
+		this.sensorType = sensorType;
+	}
+	
+	
 
 }

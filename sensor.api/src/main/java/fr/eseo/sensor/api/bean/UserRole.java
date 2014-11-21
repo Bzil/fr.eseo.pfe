@@ -3,7 +3,7 @@ package fr.eseo.sensor.api.bean;
  * Enum who define role of the user
  * @author Basile Chapellier
  */
-public enum Role {
+public enum UserRole {
 	/**
 	 * This role can manage sensor and view
 	 */
@@ -13,7 +13,7 @@ public enum Role {
 	 */
 	VIEWER,
 	/**
-	 * This role can't do anything whith the app
+	 * This role can just see global informations
 	 */
 	//TODO change name
 	INVITE
