@@ -16,7 +16,7 @@ import org.hibernate.Transaction;
  */
 
 public abstract class MyDaoManager<T> {
-
+	
 	private SessionFactory sessionFactory = null ;
 
 	/**
