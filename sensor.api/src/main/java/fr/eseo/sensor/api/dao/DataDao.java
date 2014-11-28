@@ -2,13 +2,14 @@ package fr.eseo.sensor.api.dao;
 
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 
 import fr.eseo.sensor.api.bean.Data;
 
 public class DataDao extends MyDaoManager<Data>{
-
+	
 	@Override
 	public Data getOne(int id) {
 		Session session = getSessionFactory().getCurrentSession();
