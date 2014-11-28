@@ -33,6 +33,11 @@ public class Data {
 	 * The value of the data
 	 */
 	private String value;
+	/**
+	 * Boolean to check if the data is on any smartphone
+	 */
+	private Boolean isOnPhone;
+	
 	
 	protected Data() {
 		// for hibernate
@@ -75,5 +80,13 @@ public class Data {
 
 	private void setId(int id) {
 		this.id = id;
+	}
+
+	public Boolean getIsOnPhone() {
+		return isOnPhone;
+	}
+
+	public void setIsOnPhone(Boolean isOnPhone) {
+		this.isOnPhone = isOnPhone;
 	}
 }
