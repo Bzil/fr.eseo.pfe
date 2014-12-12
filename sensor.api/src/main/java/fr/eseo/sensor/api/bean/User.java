@@ -1,5 +1,6 @@
 package fr.eseo.sensor.api.bean;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -16,8 +17,12 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @XmlRootElement
-public class User {
+public class User implements Serializable{
 	
+	/**
+	 * Serial id
+	 */
+	private static final long serialVersionUID = 6372470904979536158L;
 	/**
 	 * Unique id
 	 */
@@ -80,7 +85,4 @@ public class User {
 		return id;
 	}
 
-	private void setId(int id) {
-		this.id = id;
-	}
 }

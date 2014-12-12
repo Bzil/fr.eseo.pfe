@@ -23,6 +23,8 @@
 		<mysql.version>5.1.18</mysql.version>
 		<tomcat-server>localhost</tomcat-server>
 		<tomcat-url>http://localhost:8080/manager/text</tomcat-url>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
 	<reporting>

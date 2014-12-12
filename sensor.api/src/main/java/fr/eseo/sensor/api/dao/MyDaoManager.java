@@ -94,6 +94,22 @@ public abstract class MyDaoManager<T> {
 			throw e ;
 		}
 	}
+	/**
+	 * <h2>Method which merge a given Object from the model in the database.</h2>
+	 * @param object Object to update.
+	 */
+	public void merge(T object){
+		Session session = getSessionFactory().getCurrentSession();
+		Transaction transaction = session.beginTransaction();
+		try {
+			session.merge(object);
+			transaction.commit();
+		}
+		catch (RuntimeException e){
+			transaction.rollback();
+			throw e ;
+		}
+	}
 
 	/**
 	 * <h2>Method which gets an object from the model thanks to its id in the database.</h2>

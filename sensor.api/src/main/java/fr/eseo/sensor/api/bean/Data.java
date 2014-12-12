@@ -1,8 +1,10 @@
 package fr.eseo.sensor.api.bean;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
@@ -16,14 +18,18 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @XmlRootElement
-public class Data {
+public class Data implements Serializable{
 
+	/**
+	 * Serial id
+	 */
+	private static final long serialVersionUID = 7783315427114107586L;
 	/**
 	 * Unique id
 	 */
-	 @Id
+	@Id
 	@GeneratedValue
-	private long id;
+	private int id;
 	/**
 	 * the date of the mesure
 	 */
@@ -38,6 +44,7 @@ public class Data {
 	 * The value of the data
 	 */
 	@NotNull
+//	@XmlElement(name="data_value")
 	private String value;
 	/**
 	 * Boolean to check if the data is on any smartphone
@@ -81,12 +88,8 @@ public class Data {
 		this.value = value;
 	}
 	
-	public long getId() {
+	public int getId() {
 		return id;
-	}
-
-	private void setId(long id) {
-		this.id = id;
 	}
 
 	public Boolean getIsOnPhone() {
