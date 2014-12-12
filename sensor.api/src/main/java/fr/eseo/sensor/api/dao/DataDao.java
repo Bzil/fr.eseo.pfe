@@ -2,20 +2,29 @@ package fr.eseo.sensor.api.dao;
 
 import java.util.List;
 
-import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import fr.eseo.sensor.api.bean.Data;
 
 public class DataDao extends MyDaoManager<Data>{
-	
+
 	@Override
 	public Data getOne(int id) {
 		Session session = getSessionFactory().getCurrentSession();
-		Query query = session.createQuery("from Data d where d.id= :id").setParameter("id", id);
-		Data data = (Data)query.uniqueResult();
-		session.close();
+		Transaction  transaction = session.beginTransaction();
+		Data data = null;
+
+		try {
+			Query query = session.createQuery("from Data d where d.id= :id").setParameter("id", id);
+			data = (Data)query.uniqueResult();
+			transaction.commit();
+		}
+		catch (RuntimeException e){
+			transaction.rollback();
+			throw e ;
+		}	
 		return data;
 	}
 
@@ -23,8 +32,17 @@ public class DataDao extends MyDaoManager<Data>{
 	@Override
 	public List<Data> getAll() {
 		Session session = getSessionFactory().getCurrentSession();
-		List<Data> list = session.createQuery("from Data d").list();
-		session.close();
+		Transaction  transaction = session.beginTransaction();
+		List<Data> list = null;
+
+		try {
+			list = session.createQuery("from Data d").list();
+			transaction.commit();
+		}
+		catch (RuntimeException e){
+			transaction.rollback();
+			throw e ;
+		}	
 		return list;
 	}
 
@@ -32,9 +50,15 @@ public class DataDao extends MyDaoManager<Data>{
 	public void delete(int id) {
 		Session session = getSessionFactory().getCurrentSession();
 		Data data = getOne(id);
-		session.delete(data);
-		session.close();
-		
+		Transaction transaction = session.beginTransaction();
+		try {
+			session.delete(data);
+			transaction.commit();
+		}
+		catch (RuntimeException e){
+			transaction.rollback();
+			throw e ;
+		}
 	}
-	
+
 }

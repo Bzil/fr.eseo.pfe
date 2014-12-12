@@ -14,28 +14,26 @@ import javax.ws.rs.core.Response;
 import fr.eseo.sensor.api.bean.Sensor;
 import fr.eseo.sensor.api.dao.SensorDao;
 
-@Path("/json/sensor")
+@Path("/sensor")
+@Produces(MediaType.APPLICATION_JSON)
 public class SensorService {
 
 	private SensorDao dao = new SensorDao();
 	
 	@GET
-	@Path("/all")
-	@Produces(MediaType.APPLICATION_JSON)
+	@Path("sensors")
 	public List<Sensor> getDatas(@PathParam("param") String msg){
 		return dao.getAll();
 	}
 	
 	@GET
-	@Path("/{id}")
-	@Produces(MediaType.APPLICATION_JSON)
+	@Path("{id}")
 	public Sensor getData(@PathParam("param") String id){
 		return dao.getOne(Integer.parseInt(id));
 	}
 	
 	@POST
-	@Path("/post")
-	@Consumes(MediaType.APPLICATION_JSON)
+	@Path("post")
 	public Response createDataInJSON(Sensor sensor) {
 		dao.saveOrUpdate(sensor);
 		String result = "Data saved : " + sensor;

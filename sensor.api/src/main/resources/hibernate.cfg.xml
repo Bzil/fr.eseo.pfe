@@ -27,8 +27,13 @@
         <!-- Echo all executed SQL to stdout -->
         <property name="show_sql">false</property>
          
-        <property name="hbm2ddl.auto">validate</property>
-  
+        <property name="hbm2ddl.auto">create-drop</property>
+		<!-- Pour utiliser un schéma existant
+		 <property name="hibernate.hbm2ddl.auto">validate</property> -->  
+       	
+       	<!-- Pour maj un schéma existant
+		 <property name="hibernate.hbm2ddl.auto">validate</property> -->  
+       	
        	<mapping class="fr.eseo.sensor.api.bean.Data"/>
         <mapping class="fr.eseo.sensor.api.bean.Sensor"/>
         <mapping class="fr.eseo.sensor.api.bean.User"/>

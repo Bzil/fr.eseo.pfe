@@ -1,10 +1,13 @@
 package fr.eseo.sensor.api.bean;
 
 import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.validation.constraints.NotNull;
+import javax.xml.bind.annotation.XmlRootElement;
 /**
  * Class who define the data send by the sensor
  * @author Basile CHAPELLIER
@@ -12,6 +15,7 @@ import javax.persistence.ManyToOne;
  */
 
 @Entity
+@XmlRootElement
 public class Data {
 
 	/**
@@ -19,10 +23,11 @@ public class Data {
 	 */
 	 @Id
 	@GeneratedValue
-	private int id;
+	private long id;
 	/**
 	 * the date of the mesure
 	 */
+	@NotNull
 	private Date date;
 	/**
 	 * the sensor where the data come from
@@ -32,6 +37,7 @@ public class Data {
 	/**
 	 * The value of the data
 	 */
+	@NotNull
 	private String value;
 	/**
 	 * Boolean to check if the data is on any smartphone
@@ -39,13 +45,14 @@ public class Data {
 	private Boolean isOnPhone;
 	
 	
-	protected Data() {
+	public Data() {
 		// for hibernate
 	}
 
-	public Data(Date date, Sensor sensor, String value) {
+	public Data(Sensor sensor, String value, int order) {
 		super();
-		this.date = date;
+		// definir dans le spec, 
+		//this.date = new Date(long)(System.currentTimeMillis()-1000*order));
 		this.sensor = sensor;
 		this.value = value;
 	}
@@ -74,11 +81,11 @@ public class Data {
 		this.value = value;
 	}
 	
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
-	private void setId(int id) {
+	private void setId(long id) {
 		this.id = id;
 	}
 

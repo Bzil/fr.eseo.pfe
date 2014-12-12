@@ -1,10 +1,13 @@
 package fr.eseo.sensor.api.bean;
 
 import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.xml.bind.annotation.XmlRootElement;
 /***
  * This class defini the user who can access the data
  * @author Basile Chapellier
@@ -12,6 +15,7 @@ import javax.persistence.Id;
  */
 
 @Entity
+@XmlRootElement
 public class User {
 	
 	/**
@@ -20,13 +24,15 @@ public class User {
 	@Id
 	@GeneratedValue
 	private int id;
+	@NotNull
 	private String lastName;
+	@NotNull
 	private String firstName;
 	private Date lastConnection;
 	@Enumerated
 	private UserRole userRole;
 	
-	protected User() {
+	public User() {
 		// for hibernate
 	}
 

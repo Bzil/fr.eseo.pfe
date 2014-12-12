@@ -1,9 +1,14 @@
 package fr.eseo.sensor.api.bean;
 
 import java.util.Date;
+
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
+import javax.xml.bind.annotation.XmlRootElement;
 /**
  * Cette entité défini les capteurs qui composent l'application
  * @author Basile Chapellier
@@ -11,6 +16,7 @@ import javax.persistence.Id;
  */
 
 @Entity
+@XmlRootElement
 public class Sensor {
 
 	/**
@@ -22,17 +28,25 @@ public class Sensor {
 	/**
 	 * Date where sensor had been add to the app
 	 */
+	@NotNull
 	private Date addDate;
 	/**
 	 * Type of the data, unity
 	 */
+	@NotNull
 	private String unity;
 	/**
 	 * Define what type of graphic
 	 */
+	@NotNull
+	@Enumerated(EnumType.STRING)
 	private SensorType sensorType;
-
-	protected Sensor() {
+	/**
+	 * Sampling frequency 
+	 */
+	private long samplingFrequency;
+	
+	public Sensor() {
 		// for hibernate
 	}
 
@@ -73,6 +87,14 @@ public class Sensor {
 
 	public void setSensorType(SensorType sensorType) {
 		this.sensorType = sensorType;
+	}
+
+	public long getSamplingFrequency() {
+		return samplingFrequency;
+	}
+
+	public void setSamplingFrequency(long samplingFrequency) {
+		this.samplingFrequency = samplingFrequency;
 	}
 	
 	
