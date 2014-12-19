@@ -4,12 +4,15 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
+
 /**
  * Class who define the data send by the sensor
  * @author Basile CHAPELLIER
@@ -18,8 +21,8 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Data implements Serializable{
-
 	/**
 	 * Serial id
 	 */
@@ -36,22 +39,27 @@ public class Data implements Serializable{
 	@NotNull
 	private Date date;
 	/**
-	 * the sensor where the data come from
+	 * 
 	 */
-	@ManyToOne
-	private Sensor sensor;	
+	private int sensorId;
 	/**
 	 * The value of the data
 	 */
 	@NotNull
-//	@XmlElement(name="data_value")
 	private String value;
 	/**
 	 * Boolean to check if the data is on any smartphone
 	 */
+	@NotNull
 	private Boolean isOnPhone;
-	
-	
+
+	/**
+	 * the sensor where the data come from
+	 */
+	@XmlTransient
+	@ManyToOne
+	private Sensor sensor;
+
 	public Data() {
 		// for hibernate
 	}
@@ -60,7 +68,7 @@ public class Data implements Serializable{
 		super();
 		// definir dans le spec, 
 		//this.date = new Date(long)(System.currentTimeMillis()-1000*order));
-		this.sensor = sensor;
+		this.setSensor(sensor);
 		this.value = value;
 	}
 
@@ -71,13 +79,16 @@ public class Data implements Serializable{
 	public void setDate(Date date) {
 		this.date = date;
 	}
-
+	
 	public Sensor getSensor() {
 		return sensor;
 	}
-
+	
 	public void setSensor(Sensor sensor) {
-		this.sensor = sensor;
+		if(sensor!=null){
+			this.sensor = sensor;
+			this.sensorId = sensor.getId();
+		}
 	}
 
 	public String getValue() {
@@ -87,7 +98,7 @@ public class Data implements Serializable{
 	public void setValue(String value) {
 		this.value = value;
 	}
-	
+
 	public int getId() {
 		return id;
 	}

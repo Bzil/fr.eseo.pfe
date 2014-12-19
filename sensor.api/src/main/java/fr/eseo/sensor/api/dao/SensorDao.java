@@ -2,15 +2,18 @@ package fr.eseo.sensor.api.dao;
 
 import java.util.List;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import fr.eseo.sensor.api.bean.Data;
 import fr.eseo.sensor.api.bean.Sensor;
 
 public class SensorDao extends MyDaoManager<Sensor> {
-
+	
+	private static final Log LOGGER = LogFactory.getLog(SensorDao.class);
+	
 	@Override
 	public Sensor getOne(int id) {
 		Session session = getSessionFactory().getCurrentSession();
@@ -18,7 +21,7 @@ public class SensorDao extends MyDaoManager<Sensor> {
 		Sensor sensor = null;
 
 		try {
-			Query query = session.createQuery("from Sensor d where d.id= :id").setParameter("id", id);
+			Query query = session.createQuery("from Sensor s where s.id = :id").setParameter("id", id);
 			sensor = (Sensor)query.uniqueResult();
 			transaction.commit();
 		}
@@ -57,6 +60,10 @@ public class SensorDao extends MyDaoManager<Sensor> {
 			transaction.commit();
 		}
 		catch (RuntimeException e){
+			StringBuilder sb = new StringBuilder();
+			sb.append("Can't delete Sensor : ");
+			sb.append(id); 
+			LOGGER.info(sb.toString());
 			transaction.rollback();
 			throw e ;
 		}

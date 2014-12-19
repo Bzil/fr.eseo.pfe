@@ -3,7 +3,6 @@ package fr.eseo.sensor.api.bean;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -16,8 +15,6 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
-
 /**
  * Cette entité défini les capteurs qui composent l'application
  * @author Basile Chapellier
@@ -55,8 +52,7 @@ public class Sensor implements Serializable{
 	@Enumerated(EnumType.STRING)
 	private SensorType sensorType;
 	
-	@XmlTransient
-	@OneToMany(mappedBy="sensor",cascade=CascadeType.ALL, fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="sensor", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	private Set<Data> datas = new HashSet<Data>();
 	/**
 	 * Sampling frequency 

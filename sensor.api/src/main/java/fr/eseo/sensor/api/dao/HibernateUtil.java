@@ -18,7 +18,7 @@ import org.hibernate.cfg.Configuration;
 
 public class HibernateUtil {
 	
-	private static final Log logger = LogFactory.getLog(HibernateUtil.class);
+	private static final Log LOGGER = LogFactory.getLog(HibernateUtil.class);
 	
 	private static final SessionFactory sessionFactory;
 
@@ -27,15 +27,15 @@ public class HibernateUtil {
 	
 	static {
 		try {
-			logger.info("Trying to create a test connection with the database.");
+			LOGGER.info("Trying to create a test connection with the database.");
 			Configuration cfg = new Configuration().configure("hibernate.cfg.xml");         
 			StandardServiceRegistryBuilder sb = new StandardServiceRegistryBuilder();
 			sb.applySettings(cfg.getProperties());
 			StandardServiceRegistry standardServiceRegistry = sb.build();                   
 			sessionFactory = cfg.buildSessionFactory(standardServiceRegistry);
-			logger.info("Test connection with the database created successfuly.");
+			LOGGER.info("Test connection with the database created successfuly.");
 		} catch (ExceptionInInitializerError e) {
-			logger.info("Test connection with the database tot created.");
+			LOGGER.info("Test connection with the database tot created.");
 			throw new ExceptionInInitializerError(e);
 		}
 	}

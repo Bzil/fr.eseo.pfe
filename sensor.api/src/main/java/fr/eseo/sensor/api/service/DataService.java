@@ -16,41 +16,48 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import fr.eseo.sensor.api.bean.Data;
-import fr.eseo.sensor.api.bean.Sensor;
-import fr.eseo.sensor.api.bean.SensorType;
 import fr.eseo.sensor.api.dao.DataDao;
 import fr.eseo.sensor.api.dao.SensorDao;
 
 @Path("/data")
-@Produces(MediaType.APPLICATION_JSON)
 public class DataService {
 
 	private static final SimpleDateFormat DATE_FORMATTER = new SimpleDateFormat("dd-MM-yyyy");
+	private static final String ENCODING  = "UTF-8";
 	
 	private DataDao dataDao = new DataDao();
 	private SensorDao sensorDao = new SensorDao();
 
 	@GET
-	@Path("datas")
-	public List<Data> getDatas(@PathParam("param") String msg){
+	@Path("/datas")
+	@Produces(MediaType.APPLICATION_JSON + ";charset=" + ENCODING)
+	public List<Data> getDatas(){
 		return dataDao.getAll();
 	}
-
+	
 	@GET
-	@Path("{id}")
-	public Data getData(@PathParam("param") String id){
+	@Path("/datas/sensor/{id}")
+	@Produces(MediaType.APPLICATION_JSON + ";charset=" + ENCODING)
+	public List<Data> getDatasFromSensor(@PathParam("id") String id){
+		return dataDao.getAllFromSensor(Integer.parseInt(id));
+	}
+	
+	@GET
+	@Path("/{id}")
+	@Produces(MediaType.APPLICATION_JSON + ";charset=" + ENCODING)
+	public Data getData(@PathParam("id") String id){
 		/*Sensor s = new Sensor(new Date(System.currentTimeMillis()), "m", SensorType.GRAPH);
 		sensorDao.saveOrUpdate(s);
 		Data d = new Data(s, "1.2", 1);
-		dataDao.saveOrUpdate(d);
-		return dataDao.getAll().get(0);
-		//return new Data(new Sensor(new Date(System.currentTimeMillis()), "m", SensorType.GRAPH), "1.2", 1);*/
+		d.setIsOnPhone(false);
+		d.setDate(new Date(System.currentTimeMillis()));
+		dataDao.saveOrUpdate(d);*/
 		return dataDao.getOne(Integer.parseInt(id));
 	}
-
+	
 	@POST
 	@Consumes({MediaType.APPLICATION_JSON}) 
-	@Path("post")
+	@Path("/post")
 	public Response createDataInJSON(Data data) {
 		dataDao.saveOrUpdate(data);
 		String result = "Data saved : " + data;
@@ -59,7 +66,7 @@ public class DataService {
 	// curl -H "Content-Type: application/json" -d '{"date":"12-12-2014","value":"111", "sensorId":1  }' http://localhost:8080/sensorAPI/
 	@POST
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)    
-	@Path("post")
+	@Path("/post")
 	public Response createSensorInJSON(
 			@FormParam("date") String date,
 			@FormParam("value") String value,

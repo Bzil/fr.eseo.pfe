@@ -15,33 +15,38 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import fr.eseo.sensor.api.bean.Data;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 import fr.eseo.sensor.api.bean.Sensor;
 import fr.eseo.sensor.api.bean.SensorType;
+import fr.eseo.sensor.api.dao.HibernateUtil;
 import fr.eseo.sensor.api.dao.SensorDao;
 
 @Path("/sensor")
-@Produces(MediaType.APPLICATION_JSON)
 public class SensorService {
 
 	private static final SimpleDateFormat DATE_FORMATTER = new SimpleDateFormat("dd-MMM-yyyy");
-
+	private static final String ENCODING  = "UTF-8";
+	
 	private SensorDao sensorDao = new SensorDao();
 
 	@GET
 	@Path("sensors")
-	public List<Sensor> getDatas(@PathParam("param") String msg){
+	@Produces(MediaType.APPLICATION_JSON + ";charset=" + ENCODING)
+	public List<Sensor> getSensors(){
 		return sensorDao.getAll();
 	}
 
 	@GET
 	@Path("{id}")
-	public Sensor getData(@PathParam("param") String id){
+	@Produces(MediaType.APPLICATION_JSON + ";charset=" + ENCODING)
+	public Sensor getSensor(@PathParam("id") String id){
 		return sensorDao.getOne(Integer.parseInt(id));
 	}
 
 	@POST
-	@Consumes({MediaType.APPLICATION_JSON}) 
+	@Consumes(MediaType.APPLICATION_JSON) 
 	@Path("post")
 	public Response createDataInJSON(Sensor sensor) {
 		sensorDao.saveOrUpdate(sensor);
