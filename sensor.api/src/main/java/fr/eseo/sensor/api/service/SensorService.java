@@ -15,12 +15,8 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
-
 import fr.eseo.sensor.api.bean.Sensor;
 import fr.eseo.sensor.api.bean.SensorType;
-import fr.eseo.sensor.api.dao.HibernateUtil;
 import fr.eseo.sensor.api.dao.SensorDao;
 
 @Path("/sensor")

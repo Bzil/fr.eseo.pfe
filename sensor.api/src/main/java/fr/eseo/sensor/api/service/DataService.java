@@ -16,17 +16,26 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import fr.eseo.sensor.api.bean.Data;
+import fr.eseo.sensor.api.bean.Sensor;
+import fr.eseo.sensor.api.bean.SensorType;
 import fr.eseo.sensor.api.dao.DataDao;
 import fr.eseo.sensor.api.dao.SensorDao;
 
 @Path("/data")
 public class DataService {
-
-	private static final SimpleDateFormat DATE_FORMATTER = new SimpleDateFormat("dd-MM-yyyy");
-	private static final String ENCODING  = "UTF-8";
 	
+	/**
+	 * Date parser
+	 */
+	private static final SimpleDateFormat DATE_FORMATTER = new SimpleDateFormat("dd-MM-yyyy");
+	/**
+	 * Specific encoding type
+	 */
+	private static final String ENCODING  = "UTF-8";
+	/**
+	 * Dao
+	 */
 	private DataDao dataDao = new DataDao();
-	private SensorDao sensorDao = new SensorDao();
 
 	@GET
 	@Path("/datas")
@@ -46,12 +55,14 @@ public class DataService {
 	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON + ";charset=" + ENCODING)
 	public Data getData(@PathParam("id") String id){
-		/*Sensor s = new Sensor(new Date(System.currentTimeMillis()), "m", SensorType.GRAPH);
+		SensorDao sensorDao = new SensorDao();
+		Sensor s = new Sensor(new Date(System.currentTimeMillis()), "m", SensorType.GRAPH);
+		s.setLowBattery(false);
 		sensorDao.saveOrUpdate(s);
 		Data d = new Data(s, "1.2", 1);
 		d.setIsOnPhone(false);
 		d.setDate(new Date(System.currentTimeMillis()));
-		dataDao.saveOrUpdate(d);*/
+		dataDao.saveOrUpdate(d);
 		return dataDao.getOne(Integer.parseInt(id));
 	}
 	

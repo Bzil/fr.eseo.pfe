@@ -13,7 +13,9 @@ import fr.eseo.sensor.api.bean.Data;
 public class DataDao extends MyDaoManager<Data>{
 	
 	private static final Log LOGGER = LogFactory.getLog(DataDao.class);
-	
+	/**
+	 * @see MyDaoManager#getOne(int)
+	 */
 	@Override
 	public Data getOne(int id) {
 		Session session = getSessionFactory().getCurrentSession();
@@ -21,7 +23,7 @@ public class DataDao extends MyDaoManager<Data>{
 		Data data = null;
 
 		try {
-			Query query = session.createQuery("from Data d where d.id= :id").setParameter("id", id);
+			Query query = session.createQuery("FROM Data d WHERE d.id= :id").setParameter("id", id);
 			data = (Data)query.uniqueResult();
 			transaction.commit();
 		}
@@ -31,7 +33,9 @@ public class DataDao extends MyDaoManager<Data>{
 		}	
 		return data;
 	}
-
+	/**
+	 * @see MyDaoManager#getAll()
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Data> getAll() {
@@ -40,7 +44,7 @@ public class DataDao extends MyDaoManager<Data>{
 		List<Data> list = null;
 
 		try {
-			list = session.createQuery("from Data d").list();
+			list = session.createQuery("FROM Data d").list();
 			transaction.commit();
 		}
 		catch (RuntimeException e){
@@ -49,7 +53,9 @@ public class DataDao extends MyDaoManager<Data>{
 		}	
 		return list;
 	}
-
+	/**
+	 * @see MyDaoManager#delete(int)
+	 */
 	@Override
 	public void delete(int id) {
 		Session session = getSessionFactory().getCurrentSession();
@@ -68,7 +74,11 @@ public class DataDao extends MyDaoManager<Data>{
 			throw e ;
 		}
 	}
-	
+	/**
+	 * 
+	 * @param id
+	 * @return
+	 */
 	@SuppressWarnings("unchecked")
 	public List<Data> getAllFromSensor(int id){
 		Session session = getSessionFactory().getCurrentSession();
@@ -76,8 +86,31 @@ public class DataDao extends MyDaoManager<Data>{
 		List<Data> list = null;
 
 		try {
-			Query query = session.createQuery("from Data where sensor_id=:sensorId");
+			Query query = session.createQuery("FROM Data WHERE sensor_id=:sensorId");
 			query.setParameter("sensorId", id);
+			list = query.list();
+			transaction.commit();
+		}
+		catch (RuntimeException e){
+			transaction.rollback();
+			throw e ;
+		}	
+		return list;
+	}
+	/**
+	 * 
+	 * @param dateDiff
+	 * @return
+	 */
+	@SuppressWarnings("unchecked")
+	public List<Data> getOldData(int dateDiff){
+		Session session = getSessionFactory().getCurrentSession();
+		Transaction  transaction = session.beginTransaction();
+		List<Data> list = null;
+
+		try {
+			Query query = session.createQuery("FROM Data d WHERE d.isOnPhone = 'true' AND DATEDIFF(DAY, d.date, NOW() ) > :dateDiff ");
+			query.setParameter("dateDiff", dateDiff);
 			list = query.list();
 			transaction.commit();
 		}

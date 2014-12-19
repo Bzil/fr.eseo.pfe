@@ -13,7 +13,9 @@ import fr.eseo.sensor.api.bean.Sensor;
 public class SensorDao extends MyDaoManager<Sensor> {
 	
 	private static final Log LOGGER = LogFactory.getLog(SensorDao.class);
-	
+	/**
+	 * @see MyDaoManager#getOne(int)
+	 */
 	@Override
 	public Sensor getOne(int id) {
 		Session session = getSessionFactory().getCurrentSession();
@@ -21,7 +23,7 @@ public class SensorDao extends MyDaoManager<Sensor> {
 		Sensor sensor = null;
 
 		try {
-			Query query = session.createQuery("from Sensor s where s.id = :id").setParameter("id", id);
+			Query query = session.createQuery("FROM Sensor s WHERE s.id = :id").setParameter("id", id);
 			sensor = (Sensor)query.uniqueResult();
 			transaction.commit();
 		}
@@ -31,7 +33,9 @@ public class SensorDao extends MyDaoManager<Sensor> {
 		}	
 		return sensor;
 	}
-
+	/**
+	 * @see MyDaoManager#getAll()
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Sensor> getAll() {
@@ -40,7 +44,7 @@ public class SensorDao extends MyDaoManager<Sensor> {
 		List<Sensor> list = null;
 
 		try {
-			list = session.createQuery("from Sensor d").list();
+			list = session.createQuery("FROM Sensor s").list();
 			transaction.commit();
 		}
 		catch (RuntimeException e){
@@ -49,7 +53,9 @@ public class SensorDao extends MyDaoManager<Sensor> {
 		}	
 		return list;
 	}
-
+	/**.
+	 * @see MyDaoManager#delete(int)
+	 */
 	@Override
 	public void delete(int id) {
 		Session session = getSessionFactory().getCurrentSession();
@@ -68,5 +74,4 @@ public class SensorDao extends MyDaoManager<Sensor> {
 			throw e ;
 		}
 	}
-
 }

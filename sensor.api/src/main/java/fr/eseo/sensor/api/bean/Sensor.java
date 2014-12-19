@@ -15,6 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
+
+import org.hibernate.annotations.Type;
 /**
  * Cette entité défini les capteurs qui composent l'application
  * @author Basile Chapellier
@@ -51,6 +53,13 @@ public class Sensor implements Serializable{
 	@NotNull
 	@Enumerated(EnumType.STRING)
 	private SensorType sensorType;
+	
+	/**
+	 * 
+	 */
+	@NotNull
+	@Type(type="true_false")
+	private Boolean lowBattery;
 	
 	@OneToMany(mappedBy="sensor", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	private Set<Data> datas = new HashSet<Data>();
@@ -112,6 +121,14 @@ public class Sensor implements Serializable{
 
 	public void setDatas(Set<Data> datas) {
 		this.datas = datas;
+	}
+
+	public Boolean getLowBattery() {
+		return lowBattery;
+	}
+
+	public void setLowBattery(Boolean lowBattery) {
+		this.lowBattery = lowBattery;
 	}
 	
 	

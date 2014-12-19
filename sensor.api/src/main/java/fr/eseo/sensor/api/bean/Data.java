@@ -13,6 +13,8 @@ import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
+import org.hibernate.annotations.Type;
+
 /**
  * Class who define the data send by the sensor
  * @author Basile CHAPELLIER
@@ -51,6 +53,7 @@ public class Data implements Serializable{
 	 * Boolean to check if the data is on any smartphone
 	 */
 	@NotNull
+	@Type(type="true_false")
 	private Boolean isOnPhone;
 
 	/**
@@ -109,5 +112,13 @@ public class Data implements Serializable{
 
 	public void setIsOnPhone(Boolean isOnPhone) {
 		this.isOnPhone = isOnPhone;
+	}
+
+	public int getSensorId() {
+		return sensorId;
+	}
+
+	public void setSensorId(int sensorId) {
+		this.sensorId = sensorId;
 	}
 }
