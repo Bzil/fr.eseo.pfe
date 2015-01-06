@@ -18,29 +18,57 @@ import javax.ws.rs.core.Response;
 import fr.eseo.sensor.api.bean.Sensor;
 import fr.eseo.sensor.api.bean.SensorType;
 import fr.eseo.sensor.api.dao.SensorDao;
-
+/**
+ * Sensor Web Service to produce json response
+ * @author Basile Chapellier
+ * @version 1.0
+ */
 @Path("/sensor")
 public class SensorService {
-
+	/**
+	 * Date formatter to add date with the same pattern
+	 */
 	private static final SimpleDateFormat DATE_FORMATTER = new SimpleDateFormat("dd-MMM-yyyy");
+	/**
+	 * Specific encoding
+	 */
 	private static final String ENCODING  = "UTF-8";
-	
+	/**
+	 * Sensor dao
+	 */
 	private SensorDao sensorDao = new SensorDao();
-
+	/**
+	 * Get list of all sensor
+	 * @return list of sensor
+	 */
 	@GET
 	@Path("sensors")
 	@Produces(MediaType.APPLICATION_JSON + ";charset=" + ENCODING)
 	public List<Sensor> getSensors(){
 		return sensorDao.getAll();
 	}
-
+	/**
+	 * Get one sensor information
+	 * @param id of the sensor
+	 * @return sensor information in json
+	 */
 	@GET
 	@Path("{id}")
 	@Produces(MediaType.APPLICATION_JSON + ";charset=" + ENCODING)
 	public Sensor getSensor(@PathParam("id") String id){
 		return sensorDao.getOne(Integer.parseInt(id));
 	}
-
+	@GET
+	@Path("lowbattery")
+	@Produces(MediaType.APPLICATION_JSON + ";charset=" + ENCODING)
+	public List<Sensor> getSensorWhithoutBattery(){
+		return sensorDao.getAllSensorWithLowBattery();
+	}
+	/**
+	 * Service to Add one sensor
+	 * @param sensor 
+	 * @return Response in json
+	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON) 
 	@Path("post")
@@ -49,7 +77,14 @@ public class SensorService {
 		String result = "Data saved : " + sensor;
 		return Response.status(201).entity(result).build();
 	}
-
+	/**
+	 * Service to Add one sensor
+	 * @param date of add
+	 * @param unity of measure
+	 * @param sensorType king of graph
+	 * @param samplingFrequency frequency of measure
+	 * @return response in json
+	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)    
 	@Path("post")

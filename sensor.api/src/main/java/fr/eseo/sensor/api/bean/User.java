@@ -29,10 +29,19 @@ public class User implements Serializable{
 	@Id
 	@GeneratedValue
 	private int id;
+	/**
+	 * last name of the user
+	 */
 	@NotNull
 	private String lastName;
+	/**
+	 * first name of the user
+	 */
 	@NotNull
 	private String firstName;
+	/**
+	 * last date of connection
+	 */
 	private Date lastConnection;
 	@Enumerated
 	private UserRole userRole;

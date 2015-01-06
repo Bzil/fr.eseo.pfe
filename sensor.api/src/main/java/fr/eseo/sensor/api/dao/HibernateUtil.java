@@ -24,7 +24,6 @@ public class HibernateUtil {
 
 	private HibernateUtil(){}
 	
-	
 	static {
 		try {
 			LOGGER.info("Trying to create a test connection with the database.");
@@ -44,7 +43,6 @@ public class HibernateUtil {
 	 * <h2>Method which gets the sessionFactory.</h2>
 	 * @return A SessionFactory.
 	 */
-	
 	public static SessionFactory getSessionFactory() {
 		return sessionFactory;
 	}

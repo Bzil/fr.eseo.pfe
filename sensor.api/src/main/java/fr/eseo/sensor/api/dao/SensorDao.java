@@ -8,10 +8,11 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import fr.eseo.sensor.api.bean.Data;
 import fr.eseo.sensor.api.bean.Sensor;
 
 public class SensorDao extends MyDaoManager<Sensor> {
-	
+
 	private static final Log LOGGER = LogFactory.getLog(SensorDao.class);
 	/**
 	 * @see MyDaoManager#getOne(int)
@@ -73,5 +74,25 @@ public class SensorDao extends MyDaoManager<Sensor> {
 			transaction.rollback();
 			throw e ;
 		}
+	}
+	/**
+	 * Get all sensor with low battery
+	 * @return list of sensor found
+	 */
+	@SuppressWarnings("unchecked")
+	public List<Sensor> getAllSensorWithLowBattery(){
+		Session session = getSessionFactory().getCurrentSession();
+		Transaction  transaction = session.beginTransaction();
+		List<Sensor> list = null;
+
+		try {
+			list = session.createQuery("FROM Sensor WHERE lowBattery=true").list();
+			transaction.commit();
+		}
+		catch (RuntimeException e){
+			transaction.rollback();
+			throw e ;
+		}	
+		return list;
 	}
 }

@@ -52,10 +52,9 @@ public class Sensor implements Serializable{
 	 */
 	@NotNull
 	@Enumerated(EnumType.STRING)
-	private SensorType sensorType;
-	
+	private SensorType sensorType;	
 	/**
-	 * 
+	 * Boolean to check battery of sensor, by default false
 	 */
 	@NotNull
 	@Type(type="true_false")

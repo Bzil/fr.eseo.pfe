@@ -15,6 +15,5 @@ public enum UserRole {
 	/**
 	 * This role can just see global informations
 	 */
-	//TODO change name
-	INVITE
+	GUEST
 }

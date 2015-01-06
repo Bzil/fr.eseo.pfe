@@ -18,3 +18,18 @@ INFO  - 2014-12-19 12:02:05.363; org.hibernate.hql.internal.ast.ASTQueryTranslat
 INFO  - 2014-12-19 12:02:05.574; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
 INFO  - 2014-12-19 12:02:06.327; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
 INFO  - 2014-12-19 12:02:06.344; fr.eseo.sensor.api.dao.HibernateUtil; Test connection with the database created successfuly.
+INFO  - 2014-12-23 16:06:08.884; fr.eseo.sensor.api.dao.HibernateUtil; Trying to create a test connection with the database.
+INFO  - 2014-12-23 16:06:09.091; org.hibernate.annotations.common.reflection.java.JavaReflectionManager; HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  - 2014-12-23 16:06:09.102; org.hibernate.Version; HHH000412: Hibernate Core {4.3.7.Final}
+INFO  - 2014-12-23 16:06:09.105; org.hibernate.cfg.Environment; HHH000206: hibernate.properties not found
+INFO  - 2014-12-23 16:06:09.107; org.hibernate.cfg.Environment; HHH000021: Bytecode provider name : javassist
+INFO  - 2014-12-23 16:06:09.153; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2014-12-23 16:06:09.153; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2014-12-23 16:06:09.192; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2014-12-23 16:06:09.235; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2014-12-23 16:06:09.388; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2014-12-23 16:06:09.395; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensor]
+INFO  - 2014-12-23 16:06:09.396; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2014-12-23 16:06:09.396; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2014-12-23 16:06:09.398; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2014-12-23 16:09:23.268; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000030: Cleaning up connection pool [jdbc:mysql://localhost:3306/APISensor]

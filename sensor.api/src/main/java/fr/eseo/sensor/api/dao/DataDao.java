@@ -75,9 +75,9 @@ public class DataDao extends MyDaoManager<Data>{
 		}
 	}
 	/**
-	 * 
-	 * @param id
-	 * @return
+	 * Get all data from specific sensor
+	 * @param id of the sensor
+	 * @return list of data found
 	 */
 	@SuppressWarnings("unchecked")
 	public List<Data> getAllFromSensor(int id){
@@ -98,9 +98,9 @@ public class DataDao extends MyDaoManager<Data>{
 		return list;
 	}
 	/**
-	 * 
-	 * @param dateDiff
-	 * @return
+	 * Get old data 
+	 * @param dateDiff date dont on estime que les données sont trop vieilles
+	 * @return list of data found
 	 */
 	@SuppressWarnings("unchecked")
 	public List<Data> getOldData(int dateDiff){

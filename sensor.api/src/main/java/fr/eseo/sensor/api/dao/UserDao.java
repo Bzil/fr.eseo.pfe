@@ -9,7 +9,9 @@ import org.hibernate.Transaction;
 import fr.eseo.sensor.api.bean.User;
 
 public class UserDao extends MyDaoManager<User> {
-
+	/**
+	 * @see MyDaoManager#getOne(int)
+	 */
 	@Override
 	public User getOne(int id) {
 		Session session = getSessionFactory().getCurrentSession();
@@ -27,7 +29,9 @@ public class UserDao extends MyDaoManager<User> {
 		}	
 		return user;
 	}
-
+	/**
+	 * @see MyDaoManager#getAll()
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<User> getAll() {
@@ -45,7 +49,9 @@ public class UserDao extends MyDaoManager<User> {
 		}	
 		return list;
 	}
-
+	/**
+	 * @see MyDaoManager#delete(int)
+	 */
 	@Override
 	public void delete(int id) {
 		Session session = getSessionFactory().getCurrentSession();
