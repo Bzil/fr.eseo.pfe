@@ -71,14 +71,14 @@ public class DataService {
 	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON + ";charset=" + ENCODING)
 	public Data getData(@PathParam("id") String id){
-		/*SensorDao sensorDao = new SensorDao();
+		SensorDao sensorDao = new SensorDao();
 		Sensor s = new Sensor(new Date(System.currentTimeMillis()), "m", SensorType.GRAPH);
 		s.setLowBattery(false);
 		sensorDao.saveOrUpdate(s);
 		Data d = new Data(s, "1.2", 1);
 		d.setIsOnPhone(false);
 		d.setDate(new Date(System.currentTimeMillis()));
-		dataDao.saveOrUpdate(d);*/
+		dataDao.saveOrUpdate(d);
 		return dataDao.getOne(Integer.parseInt(id));
 	}
 	/**
@@ -94,7 +94,7 @@ public class DataService {
 		String result = "Data saved : " + data;
 		return Response.status(201).entity(result).build();
 	}
-	// curl -H "Content-Type: application/json" -d '{"date":"12-12-2014","value":"111", "sensorId":1  }' http://localhost:8080/sensorAPI/
+	
 	/**
 	 * Save a data
 	 * @param date of measure

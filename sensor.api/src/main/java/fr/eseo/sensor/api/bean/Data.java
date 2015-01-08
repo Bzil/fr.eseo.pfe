@@ -18,7 +18,7 @@ import org.hibernate.annotations.Type;
 /**
  * Class who define the data send by the sensor
  * @author Basile CHAPELLIER
- *
+ *	@version 1.0
  */
 
 @Entity
@@ -121,4 +121,15 @@ public class Data implements Serializable{
 	public void setSensorId(int sensorId) {
 		this.sensorId = sensorId;
 	}
+	
+	@Override
+	public String toString(){
+		return new StringBuffer(" Id : ").append(this.id)
+				.append(" Value : ").append(this.value)
+				.append(" Sensor Id : ").append((sensor != null) ? this.sensor.getId() : "null")
+				.append(" Date : ").append(this.date)
+				.append(" On Phone :").append(this.isOnPhone)
+				.toString();
+	}
+
 }

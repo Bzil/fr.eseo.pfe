@@ -2,6 +2,8 @@ package fr.eseo.sensor.api.dao;
 
 import java.util.List;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -16,7 +18,7 @@ import org.hibernate.Transaction;
  */
 
 public abstract class MyDaoManager<T> {
-	
+		
 	private SessionFactory sessionFactory = null ;
 
 	/**
@@ -56,7 +58,7 @@ public abstract class MyDaoManager<T> {
 		}
 		catch (RuntimeException e){
 			transaction.rollback();
-			throw e ;
+			//throw e ;
 		}
 		return true;
 	}
@@ -74,7 +76,7 @@ public abstract class MyDaoManager<T> {
 		}
 		catch (RuntimeException e){
 			transaction.rollback();
-			throw e ;
+			//throw e ;
 		}
 	}
 	
@@ -91,7 +93,7 @@ public abstract class MyDaoManager<T> {
 		}
 		catch (RuntimeException e){
 			transaction.rollback();
-			throw e ;
+			//throw e ;
 		}
 	}
 	/**
@@ -107,7 +109,7 @@ public abstract class MyDaoManager<T> {
 		}
 		catch (RuntimeException e){
 			transaction.rollback();
-			throw e ;
+			//throw e ;
 		}
 	}
 
@@ -127,6 +129,7 @@ public abstract class MyDaoManager<T> {
 	/**
 	 * <h2>Method which deletes a given object thanks to its id.</h2>
 	 * @param id The object's id to delete.
+	 * @return result of operation
 	 */
-	public abstract void delete(int id);
+	public abstract boolean delete(int id);
 }

@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 /***
  * This class defini the user who can access the data
  * @author Basile Chapellier
- *
+ *	@version 1.0
  */
 
 @Entity

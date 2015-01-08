@@ -20,12 +20,12 @@ import org.hibernate.annotations.Type;
 /**
  * Cette entité défini les capteurs qui composent l'application
  * @author Basile Chapellier
- *
+ * @version 1.0
  */
 
 @Entity
 @XmlRootElement
-public class Sensor implements Serializable{
+public class Sensor implements Serializable {
 
 	/**
 	 * Serial id
@@ -59,12 +59,19 @@ public class Sensor implements Serializable{
 	@NotNull
 	@Type(type="true_false")
 	private Boolean lowBattery;
+	/**
+	 * Place where the sensor is locate
+	 */
+	@NotNull
+	private String place;
+	
 	
 	@OneToMany(mappedBy="sensor", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	private Set<Data> datas = new HashSet<Data>();
 	/**
 	 * Sampling frequency 
 	 */
+	@NotNull
 	private long samplingFrequency;
 	
 	public Sensor() {
@@ -130,6 +137,13 @@ public class Sensor implements Serializable{
 		this.lowBattery = lowBattery;
 	}
 	
-	
+	@Override
+	public String toString(){
+		return new StringBuffer(" Id : ").append(this.id)
+				.append(" SensorType : ").append(this.sensorType)
+				.append(" Fs : ").append(this.samplingFrequency)
+				.append(" unity : ").append(this.unity)
+				.toString();
+	}
 
 }

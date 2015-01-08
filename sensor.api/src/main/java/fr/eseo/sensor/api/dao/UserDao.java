@@ -2,13 +2,23 @@ package fr.eseo.sensor.api.dao;
 
 import java.util.List;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import fr.eseo.sensor.api.bean.User;
-
+/**
+ * Specific dao for user
+ * @author Basile Chapellier
+ * @version 1.0
+ */
 public class UserDao extends MyDaoManager<User> {
+	/**
+	 * Logger
+	 */
+	private static final Log LOGGER = LogFactory.getLog(UserDao.class);
 	/**
 	 * @see MyDaoManager#getOne(int)
 	 */
@@ -25,7 +35,8 @@ public class UserDao extends MyDaoManager<User> {
 		}
 		catch (RuntimeException e){
 			transaction.rollback();
-			throw e ;
+			//throw e ;
+			LOGGER.info("Looking for user with id : " + id + "\n Trace : " + e);
 		}	
 		return user;
 	}
@@ -45,7 +56,8 @@ public class UserDao extends MyDaoManager<User> {
 		}
 		catch (RuntimeException e){
 			transaction.rollback();
-			throw e ;
+			//throw e ;
+			LOGGER.info("Can't load user list. \n Trace : " + e);
 		}	
 		return list;
 	}
@@ -53,7 +65,8 @@ public class UserDao extends MyDaoManager<User> {
 	 * @see MyDaoManager#delete(int)
 	 */
 	@Override
-	public void delete(int id) {
+	public boolean delete(int id) {
+		boolean result = true;
 		Session session = getSessionFactory().getCurrentSession();
 		User user = getOne(id);
 		Transaction transaction = session.beginTransaction();
@@ -63,7 +76,11 @@ public class UserDao extends MyDaoManager<User> {
 		}
 		catch (RuntimeException e){
 			transaction.rollback();
-			throw e ;
+			result = false;
+			LOGGER.info("Can't delete user with id : " + id +"\nTrace : " + e );
+			//throw e ;
+			
 		}
+		return result;
 	}
 }

@@ -9,7 +9,11 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 
 import fr.eseo.sensor.api.bean.Data;
-
+/**
+ * Specific dao for data
+ * @author Basile Chapellier
+ * @version 1.0
+ */
 public class DataDao extends MyDaoManager<Data>{
 	
 	private static final Log LOGGER = LogFactory.getLog(DataDao.class);
@@ -57,7 +61,8 @@ public class DataDao extends MyDaoManager<Data>{
 	 * @see MyDaoManager#delete(int)
 	 */
 	@Override
-	public void delete(int id) {
+	public boolean delete(int id) {
+		boolean result = true;
 		Session session = getSessionFactory().getCurrentSession();
 		Data data = getOne(id);
 		Transaction transaction = session.beginTransaction();
@@ -66,13 +71,12 @@ public class DataDao extends MyDaoManager<Data>{
 			transaction.commit();
 		}
 		catch (RuntimeException e){
-			StringBuilder sb = new StringBuilder();
-			sb.append("Can't delete data : ");
-			sb.append(id); 
-			LOGGER.info(sb.toString());
+			LOGGER.info("Can't delete data with id : " + id + "\n Trace : "+ e);
 			transaction.rollback();
-			throw e ;
+			result = false;
+			//throw e ;
 		}
+		return result;
 	}
 	/**
 	 * Get all data from specific sensor

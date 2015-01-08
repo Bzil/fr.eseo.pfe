@@ -70,8 +70,8 @@ public class SensorService {
 	 * @return Response in json
 	 */
 	@POST
-	@Consumes(MediaType.APPLICATION_JSON) 
 	@Path("post")
+	@Consumes(MediaType.APPLICATION_JSON) 
 	public Response createDataInJSON(Sensor sensor) {
 		sensorDao.saveOrUpdate(sensor);
 		String result = "Data saved : " + sensor;

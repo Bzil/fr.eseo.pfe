@@ -17,7 +17,9 @@ import org.hibernate.cfg.Configuration;
  */
 
 public class HibernateUtil {
-	
+	/**
+	 * Logger
+	 */
 	private static final Log LOGGER = LogFactory.getLog(HibernateUtil.class);
 	
 	private static final SessionFactory sessionFactory;

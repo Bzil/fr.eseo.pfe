@@ -10,9 +10,15 @@ import org.hibernate.Transaction;
 
 import fr.eseo.sensor.api.bean.Data;
 import fr.eseo.sensor.api.bean.Sensor;
-
+/**
+ * Specific dao for sensor 
+ * @author Basile Chapellier
+ * @version 1.0
+ */
 public class SensorDao extends MyDaoManager<Sensor> {
-
+	/**
+	 * Logger
+	 */
 	private static final Log LOGGER = LogFactory.getLog(SensorDao.class);
 	/**
 	 * @see MyDaoManager#getOne(int)
@@ -30,7 +36,7 @@ public class SensorDao extends MyDaoManager<Sensor> {
 		}
 		catch (RuntimeException e){
 			transaction.rollback();
-			throw e ;
+			LOGGER.info("Looking for Sensor with id : " + id + "\n Trace : " + e);
 		}	
 		return sensor;
 	}
@@ -49,8 +55,10 @@ public class SensorDao extends MyDaoManager<Sensor> {
 			transaction.commit();
 		}
 		catch (RuntimeException e){
+			
+			//throw e ;
+			LOGGER.info("Can't load Sensors in base \n Trace : " + e);
 			transaction.rollback();
-			throw e ;
 		}	
 		return list;
 	}
@@ -58,7 +66,8 @@ public class SensorDao extends MyDaoManager<Sensor> {
 	 * @see MyDaoManager#delete(int)
 	 */
 	@Override
-	public void delete(int id) {
+	public boolean delete(int id) {
+		boolean result = true;
 		Session session = getSessionFactory().getCurrentSession();
 		Sensor sensor = getOne(id);
 		Transaction transaction = session.beginTransaction();
@@ -67,13 +76,12 @@ public class SensorDao extends MyDaoManager<Sensor> {
 			transaction.commit();
 		}
 		catch (RuntimeException e){
-			StringBuilder sb = new StringBuilder();
-			sb.append("Can't delete Sensor : ");
-			sb.append(id); 
-			LOGGER.info(sb.toString());
+			LOGGER.info("Can't delete Sensor : " + id +"\n Trace : " + e); 
 			transaction.rollback();
-			throw e ;
+			result = false;
+			//throw e ;
 		}
+		return result;
 	}
 	/**
 	 * Get all sensor with low battery
@@ -90,8 +98,9 @@ public class SensorDao extends MyDaoManager<Sensor> {
 			transaction.commit();
 		}
 		catch (RuntimeException e){
+			LOGGER.info("Can't find sensors whitout battery \n Trace :" + e);
 			transaction.rollback();
-			throw e ;
+			//throw e ;
 		}	
 		return list;
 	}
