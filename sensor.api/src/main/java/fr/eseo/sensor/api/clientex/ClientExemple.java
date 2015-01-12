@@ -35,8 +35,7 @@ public class ClientExemple {
 			ClientConfig clientConfig = new DefaultClientConfig();
 			clientConfig.getFeatures().put(JSONConfiguration.FEATURE_POJO_MAPPING, Boolean.TRUE);
 			Client client = Client.create(clientConfig);
-			
-			
+						
 			WebResource webResource = client.resource("http://localhost:8080/sensorAPI/rest/sensor/post/");
 			ClientResponse response = webResource.accept("application/json").type("application/json").post(ClientResponse.class, input);
 
@@ -63,7 +62,6 @@ public class ClientExemple {
 			ClientConfig clientConfig = new DefaultClientConfig();
 			clientConfig.getFeatures().put(JSONConfiguration.FEATURE_POJO_MAPPING, Boolean.TRUE);
 			Client client = Client.create(clientConfig);
-			
 			
 			WebResource webResource = client.resource("http://localhost:8080/sensorAPI/rest/data/post/");
 			ClientResponse response = webResource.accept("application/json").type("application/json").post(ClientResponse.class, input);
