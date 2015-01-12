@@ -2,6 +2,8 @@ package fr.eseo.sensor.api.dao;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -21,11 +23,13 @@ public class HibernateUtilTest {
 	 * Logger
 	 */
 	private static final Log LOGGER = LogFactory.getLog(HibernateUtil.class);
-	
+
 	private static final SessionFactory sessionFactory;
 
+	public static final ThreadLocal session = new ThreadLocal();
+
 	private HibernateUtilTest(){}
-	
+
 	static {
 		try {
 			LOGGER.info("Trying to create a test connection with the database.");
@@ -40,12 +44,21 @@ public class HibernateUtilTest {
 			throw new ExceptionInInitializerError(e);
 		}
 	}
-	
+
 	/**
 	 * <h2>Method which gets the sessionFactory.</h2>
 	 * @return A SessionFactory.
 	 */
 	public static SessionFactory getSessionFactory() {
 		return sessionFactory;
+	}
+
+	@SuppressWarnings("unchecked")
+	public static void closeSession() throws HibernateException {
+		Session s = (Session) session.get();
+		session.set(null);
+		if (s != null){
+			s.close();
+		}
 	}
 }

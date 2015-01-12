@@ -17,18 +17,18 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.apache.commons.lang.builder.EqualsBuilder;
 
+import fr.eseo.sensor.api.bean.Data;
 import fr.eseo.sensor.api.bean.Sensor;
-import fr.eseo.sensor.api.bean.SensorType;
 
-public class SensorDaoTest {
+public class DataDaoTest {
 
 	private Session session;
-	private SensorDao dao;
+	private DataDao dao;
 
 	@Before
 	public void setUp(){
 		Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-		dao = new SensorDao();
+		dao = new DataDao();
 		dao.setSessionFactory(session.getSessionFactory());
 	}
 
@@ -39,86 +39,74 @@ public class SensorDaoTest {
 
 	@Test
 	public void testAddSuccess(){
-		// SensorDao dao = new SensorDao();
-		Sensor sensor = getOneSensor(true);
-		boolean tmp = dao.add(sensor);
+		// DataDao dao = new DataDao();
+		Data Data = getOneData(true);
+		boolean tmp = dao.add(Data);
 		assertTrue(tmp);
 	}
 
 	@Test 
 	public void getAddFailure(){
-		// SensorDao dao = new SensorDao();
+		// DataDao dao = new DataDao();
 		assertFalse(dao.add(null));
 	}
 
 	@Test
-	public void testgetOneSucces(){
-		// SensorDao dao = new SensorDao();
-		dao.saveOrUpdate(getOneSensor(true));
-		Sensor sensor = dao.getOne(1);
+	public void testgetOneSuccess(){
+		// DataDao dao = new DataDao();
+		dao.saveOrUpdate(getOneData(true));
+		Data Data = dao.getOne(1);
 		
-		assertNotNull(sensor);
+		assertNotNull(Data);
 		
-		SensorComparable sc = new SensorComparable(getOneSensor(true));
-		assertTrue(sc.equals(sensor));
+		DataComparable sc = new DataComparable(getOneData(true));
+		assertTrue(sc.equals(Data));
 	}
 	
-	@Test
-	public void testgetAllSensorWithLowBattery(){
-		// SensorDao dao = new SensorDao();
-		dao.saveOrUpdate(getOneSensor(false));
-		List<Sensor> found = dao.getAllSensorWithLowBattery();
-		assertNotNull(found);
-		for (Sensor sensor : found) {
-			assertTrue(sensor.getLowBattery());
-		}
-	}
 	
 	@Test
 	public void testgetOneFailure(){
-		// SensorDao dao = new SensorDao();
+		// DataDao dao = new DataDao();
 		assertNull(dao.getOne(-1));
 	}
 	
 	@Test
 	public  void testGetAll(){
-		// SensorDao dao = new SensorDao();
-		List<Sensor> found = dao.getAll();
+		// DataDao dao = new DataDao();
+		List<Data> found = dao.getAll();
 		assertNotNull(found);
 		assertEquals(2,found.size());
 	}
 	@Ignore
 	@Test
 	public void testDeleteFailure(){
-		// SensorDao dao = new SensorDao();
+		// DataDao dao = new DataDao();
 		assertFalse(dao.delete(-1));
 	}
 	@Ignore
 	@Test
 	public void testDeleteSuccess(){
-		// SensorDao dao = new SensorDao();
+		// DataDao dao = new DataDao();
 		assertTrue(dao.delete(1));
 	}
 	
-	private static Sensor getOneSensor(boolean lowBattery){
-		Sensor sensor = new Sensor();
+	private static Data getOneData(boolean onPhone){
+		Data data = new Data();
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		try {
-			sensor.setAddDate(simpleDateFormat.parse("18/11/1990"));
+			data.setDate(simpleDateFormat.parse("18/11/1990"));
 		} catch (ParseException e) {
 		}
-		sensor.setLowBattery(lowBattery);
-		sensor.setSamplingFrequency(0);
-		sensor.setSensorType(SensorType.ARROW);
-		sensor.setPlace("place");
-		sensor.setUnity("m");
-		return sensor;
+		data.setIsOnPhone(onPhone);
+		data.setSensor(new Sensor());
+		data.setValue("3,2");
+		return data;
 	}
 	
-	protected class SensorComparable extends EqualsBuilder{
+	protected class DataComparable extends EqualsBuilder{
 
-		private Sensor s;
-		public SensorComparable(Sensor s){ 
+		private Data s;
+		public DataComparable(Data s){ 
 			this.s = s;
 		}
 
@@ -127,9 +115,9 @@ public class SensorDaoTest {
 			if (obj == null || obj.getClass() != s.getClass()) { return false; }
 			if (obj == this) { return true; }
 			
-			Sensor sensor = (Sensor) obj;
+			Data Data = (Data) obj;
 			String[] excludeFields = {"id", "datas"};
-			return EqualsBuilder.reflectionEquals(s, sensor, excludeFields);
+			return EqualsBuilder.reflectionEquals(s, Data, excludeFields);
 		}
 	}
 }
