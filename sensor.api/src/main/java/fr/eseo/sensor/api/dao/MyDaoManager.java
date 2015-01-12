@@ -8,12 +8,14 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
+import fr.eseo.sensor.api.bean.User;
+
 /**
  * <h1>Manager class which allows to make the transactions to the database.</h1>
  * <h1>This class is never instanced, it is extended by other manager classes existing.</h1>
  * <h2>For one model class there is one manager class.</h2>
  * @author Basile Chapellier.
- * @version 1.0.
+ * @version 1.1.
  * @param <T> The model class that the manager class will manage.
  */
 
@@ -132,4 +134,13 @@ public abstract class MyDaoManager<T> {
 	 * @return result of operation
 	 */
 	public abstract boolean delete(int id);
+	/**
+	 * <h2>Method which gets a list of an object from the model.</h2>
+	 * @param size of the list expected
+	 * @return result of operation
+	 */
+	public List<T> getLastest(int size) {
+		List<T> list  = this.getAll();
+		return list.subList(list.size()-size, list.size());
+	}
 }

@@ -15,6 +15,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import fr.eseo.sensor.api.bean.Data;
 import fr.eseo.sensor.api.bean.Sensor;
 import fr.eseo.sensor.api.bean.SensorType;
 import fr.eseo.sensor.api.dao.SensorDao;
@@ -107,5 +108,16 @@ public class SensorService {
 		sensorDao.saveOrUpdate(sensor);
 		String result = "Data saved : " + sensor;
 		return Response.status(201).entity(result).build();       
+	}
+	/**
+	 * Get a list of lastest data
+	 * @param size of the list expected
+	 * @return list of data
+	 */
+	@GET
+	@Path("lasts/{size}")
+	@Produces(MediaType.APPLICATION_JSON + ";charset=" + ENCODING)
+	public List<Sensor> getLastData(@PathParam("size") String size){
+		return sensorDao.getLastest(Integer.parseInt(size));
 	}
 }

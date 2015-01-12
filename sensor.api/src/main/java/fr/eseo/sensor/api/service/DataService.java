@@ -71,15 +71,18 @@ public class DataService {
 	@Path("/{id}")
 	@Produces(MediaType.APPLICATION_JSON + ";charset=" + ENCODING)
 	public Data getData(@PathParam("id") String id){
-		SensorDao sensorDao = new SensorDao();
-		Sensor s = new Sensor(new Date(System.currentTimeMillis()), "m", SensorType.GRAPH);
-		s.setLowBattery(false);
-		sensorDao.saveOrUpdate(s);
-		Data d = new Data(s, "1.2", 1);
-		d.setIsOnPhone(false);
-		d.setDate(new Date(System.currentTimeMillis()));
-		dataDao.saveOrUpdate(d);
 		return dataDao.getOne(Integer.parseInt(id));
+	}
+	/**
+	 * Get a list of lastest data
+	 * @param size of the list expected
+	 * @return list of data
+	 */
+	@GET
+	@Path("lasts/{size}")
+	@Produces(MediaType.APPLICATION_JSON + ";charset=" + ENCODING)
+	public List<Data> getLastData(@PathParam("size") String size){
+		return dataDao.getLastest(Integer.parseInt(size));
 	}
 	/**
 	 * Save a data
@@ -111,8 +114,9 @@ public class DataService {
 			@FormParam("sensorId") String sensorId
 			) {
 		Data data = new Data();
+		SensorDao sensorDao = new SensorDao();
 		data.setValue(value);
-		//data.setSensor(sensorDao.getOne(Integer.parseInt(sensorId)));
+		data.setSensor(sensorDao.getOne(Integer.parseInt(sensorId)));
 		try {
 			data.setDate(DATE_FORMATTER.parse(date));
 		} catch ( ParseException e){
