@@ -65,7 +65,6 @@ public class Sensor implements Serializable {
 	@NotNull
 	private String place;
 	
-	
 	@OneToMany(mappedBy="sensor", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	private Set<Data> datas = new HashSet<Data>();
 	/**
@@ -136,7 +135,14 @@ public class Sensor implements Serializable {
 	public void setLowBattery(Boolean lowBattery) {
 		this.lowBattery = lowBattery;
 	}
-	
+	public String getPlace() {
+		return this.place;
+	}
+
+	public void setPlace(String place) {
+		this.place = place;
+	}
+
 	@Override
 	public String toString(){
 		return new StringBuffer(" Id : ").append(this.id)

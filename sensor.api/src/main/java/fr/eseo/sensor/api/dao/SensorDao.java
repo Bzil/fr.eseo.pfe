@@ -1,5 +1,4 @@
 package fr.eseo.sensor.api.dao;
-
 import java.util.List;
 
 import org.apache.commons.logging.Log;
@@ -20,6 +19,10 @@ public class SensorDao extends MyDaoManager<Sensor> {
 	 * Logger
 	 */
 	private static final Log LOGGER = LogFactory.getLog(SensorDao.class);
+	
+	public SensorDao(){
+		super();
+	}
 	/**
 	 * @see MyDaoManager#getOne(int)
 	 */

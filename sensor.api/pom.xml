@@ -30,6 +30,16 @@
 	<reporting>
 		<plugins>
 			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>2.18.1</version>
+				<configuration>
+					<showSuccess>true</showSuccess>
+					<detail>true</detail>
+					<useFile>true</useFile>
+				</configuration>
+			</plugin>
+			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>cobertura-maven-plugin</artifactId>
 				<version>2.6</version>
@@ -121,7 +131,11 @@
 			<artifactId>slf4j-api</artifactId>
 			<version>1.6.4</version>
 		</dependency>
-
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>2.2</version>
+		</dependency>
 		<!-- Logger -->
 		<dependency>
 			<groupId>commons-logging</groupId>
@@ -134,6 +148,7 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.6.4</version>
 		</dependency>
+
 
 		<!-- JUnit -->
 		<dependency>

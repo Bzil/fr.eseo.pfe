@@ -20,6 +20,11 @@ public class UserDao extends MyDaoManager<User> {
 	 * Logger
 	 */
 	private static final Log LOGGER = LogFactory.getLog(UserDao.class);
+	
+	public UserDao(){
+		super();
+	}
+	
 	/**
 	 * @see MyDaoManager#getOne(int)
 	 */

@@ -17,6 +17,11 @@ import fr.eseo.sensor.api.bean.Data;
 public class DataDao extends MyDaoManager<Data>{
 	
 	private static final Log LOGGER = LogFactory.getLog(DataDao.class);
+	
+	public DataDao(){
+		super();
+	}
+	
 	/**
 	 * @see MyDaoManager#getOne(int)
 	 */

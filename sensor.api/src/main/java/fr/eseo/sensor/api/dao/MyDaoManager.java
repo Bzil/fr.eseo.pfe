@@ -53,16 +53,17 @@ public abstract class MyDaoManager<T> {
 	public boolean add(T object){
 		Session session = getSessionFactory().getCurrentSession();
 		Transaction transaction = session.beginTransaction();
-		
+		boolean success = true;
 		try {
 			session.save(object);
 			transaction.commit();
 		}
 		catch (RuntimeException e){
+			success = false;
 			transaction.rollback();
 			//throw e ;
 		}
-		return true;
+		return success;
 	}
 
 	/**

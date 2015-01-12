@@ -7,7 +7,7 @@
     <session-factory>
         <!-- Database connection settings -->
         <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
-        <property name="connection.url">jdbc:mysql://localhost:3306/APISensor</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/APISensorTest</property>
         <!--  TODO create specific user -->
         <property name="connection.username">root</property>
         <property name="connection.password">root</property>
@@ -28,13 +28,6 @@
         <property name="show_sql">false</property>
          
         <property name="hbm2ddl.auto">create-drop</property>
-		<!-- Pour utiliser un schéma existant
-		 <property name="hibernate.hbm2ddl.auto">validate</property> -->  
-       	
-       	<!-- Pour maj un schéma existant
-		 <property name="hibernate.hbm2ddl.auto">validate</property> -->  
-		  
-       	<property name="hibernate.transaction.auto_close_session">true</property>
        	
        	<mapping class="fr.eseo.sensor.api.bean.Data"/>
         <mapping class="fr.eseo.sensor.api.bean.Sensor"/>
