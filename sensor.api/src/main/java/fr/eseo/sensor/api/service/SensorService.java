@@ -15,7 +15,6 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import fr.eseo.sensor.api.bean.Data;
 import fr.eseo.sensor.api.bean.Sensor;
 import fr.eseo.sensor.api.bean.SensorType;
 import fr.eseo.sensor.api.dao.SensorDao;
@@ -37,7 +36,16 @@ public class SensorService {
 	/**
 	 * Sensor dao
 	 */
-	private SensorDao sensorDao = new SensorDao();
+	private SensorDao sensorDao;
+	
+	public SensorService(){
+		this(new SensorDao());
+	}
+	
+	public SensorService(SensorDao sensorDao) {
+		super();
+		this.sensorDao = sensorDao;
+	}
 	/**
 	 * Get list of all sensor
 	 * @return list of sensor
@@ -120,4 +128,14 @@ public class SensorService {
 	public List<Sensor> getLastData(@PathParam("size") String size){
 		return sensorDao.getLastest(Integer.parseInt(size));
 	}
+
+	public SensorDao getSensorDao() {
+		return sensorDao;
+	}
+
+	public void setSensorDao(SensorDao sensorDao) {
+		this.sensorDao = sensorDao;
+	}
+	
+	
 }

@@ -11,9 +11,7 @@ import java.util.List;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.MockitoAnnotations;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import fr.eseo.sensor.api.bean.Data;
@@ -37,7 +35,7 @@ public class DataServiceTest {
 	public void testGetOneCorrectData(){
 		Data d = DataGenerator.getOneData(false);
 		doReturn(d).when(daoMock).getOne(anyInt());
-		assertEquals(" Id : 0 Value : 3,2 Sensor Id : 0 Date : Sun Nov 18 00:00:00 CET 1990 On Phone :false", ds.getData("12").toString());
+		assertEquals(d.toString(), ds.getData("12").toString());
 	}
 	
 	@Test
@@ -58,9 +56,10 @@ public class DataServiceTest {
 		list.add(DataGenerator.getOneData(false));
 		list.add(DataGenerator.getOneData(true));
 		doReturn(list).when(daoMock).getAll();
-		assertEquals("[ Id : 0 Value : 3,2 Sensor Id : 0 Date : Sun Nov 18 00:00:00 CET 1990 On Phone :false,  Id : 0 Value : 3,2 Sensor Id : 0 Date : Sun Nov 18 00:00:00 CET 1990 On Phone :true]", ds.getDatas().toString());
+		assertEquals(list.toString(), ds.getDatas().toString());
 	}
-
+	
+	@Test
 	public void testGetWrongDatas(){
 		doReturn(null).when(daoMock).getAll();
 		assertNull(ds.getDatas());
@@ -71,6 +70,42 @@ public class DataServiceTest {
 		doReturn(null).when(daoMock).getAll();
 		assertNull(ds.getDatas().toString());
 	}
+
+	@Test
+	public void testGetCorrectDatasFromSensor(){
+		List<Data> list = new ArrayList<Data>();
+		list.add(DataGenerator.getOneData(false));
+		list.add(DataGenerator.getOneData(true));
+		doReturn(list).when(daoMock).getAllFromSensor(anyInt());
+		assertEquals(list.toString(), ds.getDatasFromSensor("0").toString());
+	}
 	
+	@Test
+	public void testGetWrongDatasFromSensor(){
+		doReturn(null).when(daoMock).getAllFromSensor(anyInt());
+		assertNull(ds.getDatasFromSensor("1"));
+	}
+	
+	@Test(expected=java.lang.NullPointerException.class)
+	public void testGetWrongDatasThrowExceptionFromSensor(){
+		doReturn(null).when(daoMock).getAllFromSensor(anyInt());
+		assertNull(ds.getDatasFromSensor("1").toString());
+	}
+	
+	@Test
+	public void testGetCorrectLastDatas(){
+		List<Data> list = new ArrayList<Data>();
+		list.add(DataGenerator.getOneData(false));
+		list.add(DataGenerator.getOneData(true));
+		doReturn(list).when(daoMock).getLastest(anyInt());
+		assertEquals(list.toString(), ds.getLastData("2").toString());
+	}
+	
+	@Test
+	public void testGetWrongLastDatas(){
+		doReturn(null).when(daoMock).getLastest(anyInt());
+		assertNull(ds.getLastData("1"));
+	}
+
 	
 }

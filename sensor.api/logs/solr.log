@@ -6468,3 +6468,782 @@ INFO  - 2015-01-15 12:36:27.506; fr.eseo.sensor.api.dao.DataDao; Can't delete da
  Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
 INFO  - 2015-01-15 12:36:27.545; fr.eseo.sensor.api.dao.SensorDao; Can't delete Sensor : -1
  Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 12:50:55.496; fr.eseo.sensor.api.dao.HibernateUtil; Trying to create a test connection with the database.
+INFO  - 2015-01-15 12:50:55.681; org.hibernate.annotations.common.reflection.java.JavaReflectionManager; HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  - 2015-01-15 12:50:55.687; org.hibernate.Version; HHH000412: Hibernate Core {4.3.7.Final}
+INFO  - 2015-01-15 12:50:55.689; org.hibernate.cfg.Environment; HHH000206: hibernate.properties not found
+INFO  - 2015-01-15 12:50:55.691; org.hibernate.cfg.Environment; HHH000021: Bytecode provider name : javassist
+INFO  - 2015-01-15 12:50:55.718; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 12:50:55.718; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 12:50:55.806; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 12:50:55.858; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 12:50:55.992; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 12:50:55.997; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 12:50:55.998; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 12:50:55.998; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 12:50:56.000; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 12:50:56.261; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 12:50:56.469; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 12:50:56.475; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 12:50:56.531; org.hibernate.validator.util.Version; Hibernate Validator 4.2.0.Final
+INFO  - 2015-01-15 12:50:56.970; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 12:50:57.054; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 12:50:57.064; fr.eseo.sensor.api.dao.HibernateUtil; Test connection with the database created successfuly.
+INFO  - 2015-01-15 12:50:57.398; fr.eseo.sensor.api.dao.HibernateUtilTest; Trying to create a test connection with the database.
+INFO  - 2015-01-15 12:50:57.399; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 12:50:57.399; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 12:50:57.401; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 12:50:57.406; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 12:50:57.417; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 12:50:57.418; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 12:50:57.418; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 12:50:57.419; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 12:50:57.419; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 12:50:57.438; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 12:50:57.450; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 12:50:57.451; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 12:50:57.489; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 12:50:57.555; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 12:50:57.557; fr.eseo.sensor.api.dao.HibernateUtilTest; Test connection with the database created successfuly.
+INFO  - 2015-01-15 12:50:57.579; fr.eseo.sensor.api.dao.DataDao; Can't delete data with id : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 12:50:57.610; fr.eseo.sensor.api.dao.SensorDao; Can't delete Sensor : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 12:57:06.233; fr.eseo.sensor.api.dao.HibernateUtil; Trying to create a test connection with the database.
+INFO  - 2015-01-15 12:57:06.403; org.hibernate.annotations.common.reflection.java.JavaReflectionManager; HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  - 2015-01-15 12:57:06.410; org.hibernate.Version; HHH000412: Hibernate Core {4.3.7.Final}
+INFO  - 2015-01-15 12:57:06.413; org.hibernate.cfg.Environment; HHH000206: hibernate.properties not found
+INFO  - 2015-01-15 12:57:06.415; org.hibernate.cfg.Environment; HHH000021: Bytecode provider name : javassist
+INFO  - 2015-01-15 12:57:06.438; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 12:57:06.439; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 12:57:06.509; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 12:57:06.541; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 12:57:06.663; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 12:57:06.667; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 12:57:06.668; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 12:57:06.669; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 12:57:06.670; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 12:57:06.895; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 12:57:07.097; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 12:57:07.104; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 12:57:07.158; org.hibernate.validator.util.Version; Hibernate Validator 4.2.0.Final
+INFO  - 2015-01-15 12:57:07.502; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 12:57:07.576; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 12:57:07.585; fr.eseo.sensor.api.dao.HibernateUtil; Test connection with the database created successfuly.
+INFO  - 2015-01-15 12:57:07.962; fr.eseo.sensor.api.dao.HibernateUtilTest; Trying to create a test connection with the database.
+INFO  - 2015-01-15 12:57:07.964; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 12:57:07.965; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 12:57:07.982; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 12:57:07.989; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 12:57:08.008; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 12:57:08.010; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 12:57:08.014; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 12:57:08.019; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 12:57:08.020; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 12:57:08.054; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 12:57:08.070; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 12:57:08.071; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 12:57:08.114; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 12:57:08.197; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 12:57:08.199; fr.eseo.sensor.api.dao.HibernateUtilTest; Test connection with the database created successfuly.
+INFO  - 2015-01-15 12:57:08.220; fr.eseo.sensor.api.dao.DataDao; Can't delete data with id : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 12:57:08.251; fr.eseo.sensor.api.dao.SensorDao; Can't delete Sensor : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 12:59:05.198; fr.eseo.sensor.api.dao.HibernateUtil; Trying to create a test connection with the database.
+INFO  - 2015-01-15 12:59:05.380; org.hibernate.annotations.common.reflection.java.JavaReflectionManager; HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  - 2015-01-15 12:59:05.388; org.hibernate.Version; HHH000412: Hibernate Core {4.3.7.Final}
+INFO  - 2015-01-15 12:59:05.391; org.hibernate.cfg.Environment; HHH000206: hibernate.properties not found
+INFO  - 2015-01-15 12:59:05.394; org.hibernate.cfg.Environment; HHH000021: Bytecode provider name : javassist
+INFO  - 2015-01-15 12:59:05.423; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 12:59:05.423; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 12:59:05.484; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 12:59:05.519; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 12:59:05.635; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 12:59:05.639; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 12:59:05.640; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 12:59:05.640; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 12:59:05.642; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 12:59:05.871; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 12:59:06.121; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 12:59:06.129; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 12:59:06.202; org.hibernate.validator.util.Version; Hibernate Validator 4.2.0.Final
+INFO  - 2015-01-15 12:59:06.543; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 12:59:06.617; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 12:59:06.629; fr.eseo.sensor.api.dao.HibernateUtil; Test connection with the database created successfuly.
+INFO  - 2015-01-15 12:59:06.976; fr.eseo.sensor.api.dao.HibernateUtilTest; Trying to create a test connection with the database.
+INFO  - 2015-01-15 12:59:06.977; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 12:59:06.978; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 12:59:06.980; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 12:59:06.984; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 12:59:06.993; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 12:59:06.998; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 12:59:06.999; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 12:59:07.000; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 12:59:07.000; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 12:59:07.021; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 12:59:07.035; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 12:59:07.035; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 12:59:07.070; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 12:59:07.141; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 12:59:07.143; fr.eseo.sensor.api.dao.HibernateUtilTest; Test connection with the database created successfuly.
+INFO  - 2015-01-15 12:59:07.162; fr.eseo.sensor.api.dao.DataDao; Can't delete data with id : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 12:59:07.194; fr.eseo.sensor.api.dao.SensorDao; Can't delete Sensor : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 12:59:12.271; fr.eseo.sensor.api.dao.HibernateUtil; Trying to create a test connection with the database.
+INFO  - 2015-01-15 12:59:12.580; org.hibernate.annotations.common.reflection.java.JavaReflectionManager; HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  - 2015-01-15 12:59:12.599; org.hibernate.Version; HHH000412: Hibernate Core {4.3.7.Final}
+INFO  - 2015-01-15 12:59:12.607; org.hibernate.cfg.Environment; HHH000206: hibernate.properties not found
+INFO  - 2015-01-15 12:59:12.613; org.hibernate.cfg.Environment; HHH000021: Bytecode provider name : javassist
+INFO  - 2015-01-15 12:59:12.698; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 12:59:12.699; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 12:59:12.943; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 12:59:12.984; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 12:59:13.229; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 12:59:13.238; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 12:59:13.239; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 12:59:13.239; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 12:59:13.242; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 12:59:13.627; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 12:59:13.906; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 12:59:13.914; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 12:59:14.013; org.hibernate.validator.util.Version; Hibernate Validator 4.2.0.Final
+INFO  - 2015-01-15 12:59:14.476; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 12:59:14.593; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 12:59:14.612; fr.eseo.sensor.api.dao.HibernateUtil; Test connection with the database created successfuly.
+INFO  - 2015-01-15 12:59:15.077; fr.eseo.sensor.api.dao.HibernateUtilTest; Trying to create a test connection with the database.
+INFO  - 2015-01-15 12:59:15.078; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 12:59:15.079; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 12:59:15.083; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 12:59:15.087; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 12:59:15.100; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 12:59:15.101; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 12:59:15.109; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 12:59:15.110; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 12:59:15.111; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 12:59:15.138; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 12:59:15.152; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 12:59:15.152; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 12:59:15.207; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 12:59:15.273; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 12:59:15.275; fr.eseo.sensor.api.dao.HibernateUtilTest; Test connection with the database created successfuly.
+INFO  - 2015-01-15 12:59:15.296; fr.eseo.sensor.api.dao.DataDao; Can't delete data with id : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 12:59:15.339; fr.eseo.sensor.api.dao.SensorDao; Can't delete Sensor : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:14:06.527; fr.eseo.sensor.api.dao.HibernateUtil; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:14:06.687; org.hibernate.annotations.common.reflection.java.JavaReflectionManager; HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  - 2015-01-15 13:14:06.697; org.hibernate.Version; HHH000412: Hibernate Core {4.3.7.Final}
+INFO  - 2015-01-15 13:14:06.700; org.hibernate.cfg.Environment; HHH000206: hibernate.properties not found
+INFO  - 2015-01-15 13:14:06.703; org.hibernate.cfg.Environment; HHH000021: Bytecode provider name : javassist
+INFO  - 2015-01-15 13:14:06.729; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:14:06.729; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:14:06.800; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:14:06.838; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:14:06.969; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:14:06.975; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:14:06.976; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:14:06.976; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:14:06.978; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:14:07.198; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:14:07.405; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:14:07.412; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:14:07.473; org.hibernate.validator.util.Version; Hibernate Validator 4.2.0.Final
+INFO  - 2015-01-15 13:14:07.837; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:14:07.914; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:14:07.926; fr.eseo.sensor.api.dao.HibernateUtil; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:14:08.254; fr.eseo.sensor.api.dao.HibernateUtilTest; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:14:08.254; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:14:08.255; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:14:08.257; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:14:08.262; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:14:08.272; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:14:08.272; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:14:08.273; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:14:08.273; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:14:08.274; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:14:08.293; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:14:08.310; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:14:08.312; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:14:08.347; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:14:08.433; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:14:08.435; fr.eseo.sensor.api.dao.HibernateUtilTest; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:14:08.456; fr.eseo.sensor.api.dao.DataDao; Can't delete data with id : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:14:08.494; fr.eseo.sensor.api.dao.SensorDao; Can't delete Sensor : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:19:16.154; fr.eseo.sensor.api.dao.HibernateUtil; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:19:16.317; org.hibernate.annotations.common.reflection.java.JavaReflectionManager; HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  - 2015-01-15 13:19:16.325; org.hibernate.Version; HHH000412: Hibernate Core {4.3.7.Final}
+INFO  - 2015-01-15 13:19:16.327; org.hibernate.cfg.Environment; HHH000206: hibernate.properties not found
+INFO  - 2015-01-15 13:19:16.329; org.hibernate.cfg.Environment; HHH000021: Bytecode provider name : javassist
+INFO  - 2015-01-15 13:19:16.353; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:19:16.354; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:19:16.422; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:19:16.459; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:19:16.582; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:19:16.586; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:19:16.587; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:19:16.587; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:19:16.589; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:19:16.823; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:19:17.021; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:19:17.027; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:19:17.084; org.hibernate.validator.util.Version; Hibernate Validator 4.2.0.Final
+INFO  - 2015-01-15 13:19:17.431; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:19:17.510; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:19:17.520; fr.eseo.sensor.api.dao.HibernateUtil; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:19:17.847; fr.eseo.sensor.api.dao.HibernateUtilTest; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:19:17.848; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:19:17.849; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:19:17.851; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:19:17.855; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:19:17.866; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:19:17.867; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:19:17.868; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:19:17.869; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:19:17.869; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:19:17.889; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:19:17.901; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:19:17.901; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:19:17.936; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:19:18.008; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:19:18.010; fr.eseo.sensor.api.dao.HibernateUtilTest; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:19:18.031; fr.eseo.sensor.api.dao.DataDao; Can't delete data with id : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:19:18.062; fr.eseo.sensor.api.dao.SensorDao; Can't delete Sensor : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:19:51.527; fr.eseo.sensor.api.dao.HibernateUtil; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:19:51.679; org.hibernate.annotations.common.reflection.java.JavaReflectionManager; HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  - 2015-01-15 13:19:51.685; org.hibernate.Version; HHH000412: Hibernate Core {4.3.7.Final}
+INFO  - 2015-01-15 13:19:51.687; org.hibernate.cfg.Environment; HHH000206: hibernate.properties not found
+INFO  - 2015-01-15 13:19:51.689; org.hibernate.cfg.Environment; HHH000021: Bytecode provider name : javassist
+INFO  - 2015-01-15 13:19:51.716; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:19:51.716; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:19:51.779; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:19:51.815; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:19:51.937; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:19:51.942; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:19:51.942; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:19:51.943; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:19:51.945; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:19:52.177; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:19:52.380; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:19:52.388; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:19:52.453; org.hibernate.validator.util.Version; Hibernate Validator 4.2.0.Final
+INFO  - 2015-01-15 13:19:52.801; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:19:52.875; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:19:52.885; fr.eseo.sensor.api.dao.HibernateUtil; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:19:53.212; fr.eseo.sensor.api.dao.HibernateUtilTest; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:19:53.213; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:19:53.213; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:19:53.215; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:19:53.219; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:19:53.227; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:19:53.228; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:19:53.229; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:19:53.229; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:19:53.230; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:19:53.248; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:19:53.265; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:19:53.266; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:19:53.303; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:19:53.374; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:19:53.376; fr.eseo.sensor.api.dao.HibernateUtilTest; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:19:53.395; fr.eseo.sensor.api.dao.DataDao; Can't delete data with id : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:19:53.425; fr.eseo.sensor.api.dao.SensorDao; Can't delete Sensor : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:21:19.976; fr.eseo.sensor.api.dao.HibernateUtil; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:21:20.137; org.hibernate.annotations.common.reflection.java.JavaReflectionManager; HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  - 2015-01-15 13:21:20.143; org.hibernate.Version; HHH000412: Hibernate Core {4.3.7.Final}
+INFO  - 2015-01-15 13:21:20.145; org.hibernate.cfg.Environment; HHH000206: hibernate.properties not found
+INFO  - 2015-01-15 13:21:20.147; org.hibernate.cfg.Environment; HHH000021: Bytecode provider name : javassist
+INFO  - 2015-01-15 13:21:20.168; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:21:20.168; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:21:20.229; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:21:20.258; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:21:20.386; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:21:20.392; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:21:20.393; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:21:20.395; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:21:20.397; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:21:20.637; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:21:20.849; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:21:20.857; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:21:20.909; org.hibernate.validator.util.Version; Hibernate Validator 4.2.0.Final
+INFO  - 2015-01-15 13:21:21.258; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:21:21.336; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:21:21.346; fr.eseo.sensor.api.dao.HibernateUtil; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:21:21.653; fr.eseo.sensor.api.dao.HibernateUtilTest; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:21:21.654; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:21:21.654; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:21:21.656; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:21:21.659; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:21:21.671; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:21:21.671; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:21:21.672; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:21:21.672; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:21:21.673; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:21:21.691; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:21:21.706; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:21:21.706; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:21:21.744; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:21:21.822; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:21:21.823; fr.eseo.sensor.api.dao.HibernateUtilTest; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:21:21.844; fr.eseo.sensor.api.dao.DataDao; Can't delete data with id : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:21:21.877; fr.eseo.sensor.api.dao.SensorDao; Can't delete Sensor : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:22:36.783; fr.eseo.sensor.api.dao.HibernateUtil; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:22:36.933; org.hibernate.annotations.common.reflection.java.JavaReflectionManager; HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  - 2015-01-15 13:22:36.941; org.hibernate.Version; HHH000412: Hibernate Core {4.3.7.Final}
+INFO  - 2015-01-15 13:22:36.943; org.hibernate.cfg.Environment; HHH000206: hibernate.properties not found
+INFO  - 2015-01-15 13:22:36.945; org.hibernate.cfg.Environment; HHH000021: Bytecode provider name : javassist
+INFO  - 2015-01-15 13:22:36.968; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:22:36.968; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:22:37.031; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:22:37.062; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:22:37.178; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:22:37.183; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:22:37.184; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:22:37.184; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:22:37.186; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:22:37.411; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:22:37.609; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:22:37.616; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:22:37.668; org.hibernate.validator.util.Version; Hibernate Validator 4.2.0.Final
+INFO  - 2015-01-15 13:22:38.013; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:22:38.101; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:22:38.112; fr.eseo.sensor.api.dao.HibernateUtil; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:22:38.426; fr.eseo.sensor.api.dao.HibernateUtilTest; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:22:38.427; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:22:38.427; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:22:38.430; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:22:38.433; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:22:38.444; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:22:38.444; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:22:38.445; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:22:38.445; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:22:38.446; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:22:38.466; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:22:38.480; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:22:38.480; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:22:38.516; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:22:38.595; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:22:38.597; fr.eseo.sensor.api.dao.HibernateUtilTest; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:22:38.616; fr.eseo.sensor.api.dao.DataDao; Can't delete data with id : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:22:38.649; fr.eseo.sensor.api.dao.SensorDao; Can't delete Sensor : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:24:03.700; fr.eseo.sensor.api.dao.HibernateUtil; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:24:03.860; org.hibernate.annotations.common.reflection.java.JavaReflectionManager; HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  - 2015-01-15 13:24:03.868; org.hibernate.Version; HHH000412: Hibernate Core {4.3.7.Final}
+INFO  - 2015-01-15 13:24:03.870; org.hibernate.cfg.Environment; HHH000206: hibernate.properties not found
+INFO  - 2015-01-15 13:24:03.873; org.hibernate.cfg.Environment; HHH000021: Bytecode provider name : javassist
+INFO  - 2015-01-15 13:24:03.898; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:24:03.898; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:24:03.960; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:24:03.993; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:24:04.113; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:24:04.117; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:24:04.117; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:24:04.118; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:24:04.119; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:24:04.348; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:24:04.549; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:24:04.555; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:24:04.610; org.hibernate.validator.util.Version; Hibernate Validator 4.2.0.Final
+INFO  - 2015-01-15 13:24:04.961; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:24:05.035; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:24:05.047; fr.eseo.sensor.api.dao.HibernateUtil; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:24:05.387; fr.eseo.sensor.api.dao.HibernateUtilTest; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:24:05.388; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:24:05.388; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:24:05.391; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:24:05.395; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:24:05.405; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:24:05.405; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:24:05.406; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:24:05.406; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:24:05.407; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:24:05.426; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:24:05.440; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:24:05.441; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:24:05.476; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:24:05.543; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:24:05.545; fr.eseo.sensor.api.dao.HibernateUtilTest; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:24:05.565; fr.eseo.sensor.api.dao.DataDao; Can't delete data with id : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:24:05.598; fr.eseo.sensor.api.dao.SensorDao; Can't delete Sensor : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:24:46.282; fr.eseo.sensor.api.dao.HibernateUtil; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:24:46.436; org.hibernate.annotations.common.reflection.java.JavaReflectionManager; HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  - 2015-01-15 13:24:46.444; org.hibernate.Version; HHH000412: Hibernate Core {4.3.7.Final}
+INFO  - 2015-01-15 13:24:46.446; org.hibernate.cfg.Environment; HHH000206: hibernate.properties not found
+INFO  - 2015-01-15 13:24:46.449; org.hibernate.cfg.Environment; HHH000021: Bytecode provider name : javassist
+INFO  - 2015-01-15 13:24:46.475; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:24:46.475; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:24:46.546; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:24:46.578; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:24:46.699; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:24:46.703; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:24:46.704; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:24:46.704; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:24:46.706; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:24:46.938; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:24:47.230; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:24:47.237; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:24:47.296; org.hibernate.validator.util.Version; Hibernate Validator 4.2.0.Final
+INFO  - 2015-01-15 13:24:47.641; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:24:47.724; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:24:47.734; fr.eseo.sensor.api.dao.HibernateUtil; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:24:48.119; fr.eseo.sensor.api.dao.HibernateUtilTest; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:24:48.120; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:24:48.120; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:24:48.122; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:24:48.127; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:24:48.138; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:24:48.139; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:24:48.139; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:24:48.140; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:24:48.140; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:24:48.161; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:24:48.176; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:24:48.177; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:24:48.216; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:24:48.291; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:24:48.294; fr.eseo.sensor.api.dao.HibernateUtilTest; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:24:48.316; fr.eseo.sensor.api.dao.DataDao; Can't delete data with id : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:24:48.349; fr.eseo.sensor.api.dao.SensorDao; Can't delete Sensor : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:25:07.001; fr.eseo.sensor.api.dao.HibernateUtil; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:25:07.175; org.hibernate.annotations.common.reflection.java.JavaReflectionManager; HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  - 2015-01-15 13:25:07.181; org.hibernate.Version; HHH000412: Hibernate Core {4.3.7.Final}
+INFO  - 2015-01-15 13:25:07.184; org.hibernate.cfg.Environment; HHH000206: hibernate.properties not found
+INFO  - 2015-01-15 13:25:07.186; org.hibernate.cfg.Environment; HHH000021: Bytecode provider name : javassist
+INFO  - 2015-01-15 13:25:07.219; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:25:07.220; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:25:07.294; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:25:07.328; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:25:07.461; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:25:07.468; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:25:07.469; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:25:07.470; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:25:07.472; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:25:07.703; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:25:07.963; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:25:07.970; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:25:08.039; org.hibernate.validator.util.Version; Hibernate Validator 4.2.0.Final
+INFO  - 2015-01-15 13:25:08.459; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:25:08.542; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:25:08.560; fr.eseo.sensor.api.dao.HibernateUtil; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:25:08.972; fr.eseo.sensor.api.dao.HibernateUtilTest; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:25:08.974; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:25:08.978; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:25:08.989; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:25:08.993; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:25:09.022; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:25:09.026; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:25:09.032; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:25:09.037; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:25:09.038; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:25:09.068; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:25:09.081; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:25:09.082; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:25:09.151; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:25:09.227; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:25:09.230; fr.eseo.sensor.api.dao.HibernateUtilTest; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:25:09.277; fr.eseo.sensor.api.dao.DataDao; Can't delete data with id : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:25:09.331; fr.eseo.sensor.api.dao.SensorDao; Can't delete Sensor : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:25:13.485; fr.eseo.sensor.api.dao.HibernateUtil; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:25:13.654; org.hibernate.annotations.common.reflection.java.JavaReflectionManager; HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  - 2015-01-15 13:25:13.661; org.hibernate.Version; HHH000412: Hibernate Core {4.3.7.Final}
+INFO  - 2015-01-15 13:25:13.664; org.hibernate.cfg.Environment; HHH000206: hibernate.properties not found
+INFO  - 2015-01-15 13:25:13.665; org.hibernate.cfg.Environment; HHH000021: Bytecode provider name : javassist
+INFO  - 2015-01-15 13:25:13.688; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:25:13.689; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:25:13.865; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:25:13.896; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:25:14.020; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:25:14.024; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:25:14.025; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:25:14.025; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:25:14.027; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:25:14.332; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:25:14.616; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:25:14.626; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:25:14.725; org.hibernate.validator.util.Version; Hibernate Validator 4.2.0.Final
+INFO  - 2015-01-15 13:25:15.194; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:25:15.295; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:25:15.309; fr.eseo.sensor.api.dao.HibernateUtil; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:25:15.696; fr.eseo.sensor.api.dao.HibernateUtilTest; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:25:15.696; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:25:15.697; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:25:15.698; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:25:15.702; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:25:15.715; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:25:15.716; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:25:15.716; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:25:15.717; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:25:15.717; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:25:15.741; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:25:15.755; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:25:15.756; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:25:15.786; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:25:15.859; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:25:15.860; fr.eseo.sensor.api.dao.HibernateUtilTest; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:25:15.879; fr.eseo.sensor.api.dao.DataDao; Can't delete data with id : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:25:15.908; fr.eseo.sensor.api.dao.SensorDao; Can't delete Sensor : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:29:34.412; fr.eseo.sensor.api.dao.HibernateUtil; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:29:34.568; org.hibernate.annotations.common.reflection.java.JavaReflectionManager; HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  - 2015-01-15 13:29:34.574; org.hibernate.Version; HHH000412: Hibernate Core {4.3.7.Final}
+INFO  - 2015-01-15 13:29:34.576; org.hibernate.cfg.Environment; HHH000206: hibernate.properties not found
+INFO  - 2015-01-15 13:29:34.578; org.hibernate.cfg.Environment; HHH000021: Bytecode provider name : javassist
+INFO  - 2015-01-15 13:29:34.599; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:29:34.599; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:29:34.663; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:29:34.693; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:29:34.813; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:29:34.818; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:29:34.818; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:29:34.819; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:29:34.820; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:29:35.041; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:29:35.247; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:29:35.255; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:29:35.314; org.hibernate.validator.util.Version; Hibernate Validator 4.2.0.Final
+INFO  - 2015-01-15 13:29:35.672; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:29:35.746; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:29:35.756; fr.eseo.sensor.api.dao.HibernateUtil; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:29:36.076; fr.eseo.sensor.api.dao.HibernateUtilTest; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:29:36.077; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:29:36.077; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:29:36.079; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:29:36.084; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:29:36.095; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:29:36.095; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:29:36.096; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:29:36.096; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:29:36.097; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:29:36.117; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:29:36.131; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:29:36.131; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:29:36.163; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:29:36.234; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:29:36.236; fr.eseo.sensor.api.dao.HibernateUtilTest; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:29:36.255; fr.eseo.sensor.api.dao.DataDao; Can't delete data with id : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:29:36.285; fr.eseo.sensor.api.dao.SensorDao; Can't delete Sensor : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:29:39.718; fr.eseo.sensor.api.dao.HibernateUtil; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:29:39.859; org.hibernate.annotations.common.reflection.java.JavaReflectionManager; HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  - 2015-01-15 13:29:39.865; org.hibernate.Version; HHH000412: Hibernate Core {4.3.7.Final}
+INFO  - 2015-01-15 13:29:39.868; org.hibernate.cfg.Environment; HHH000206: hibernate.properties not found
+INFO  - 2015-01-15 13:29:39.869; org.hibernate.cfg.Environment; HHH000021: Bytecode provider name : javassist
+INFO  - 2015-01-15 13:29:39.889; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:29:39.889; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:29:40.035; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:29:40.061; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:29:40.205; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:29:40.215; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:29:40.215; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:29:40.218; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:29:40.225; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:29:40.489; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:29:40.711; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:29:40.718; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:29:40.773; org.hibernate.validator.util.Version; Hibernate Validator 4.2.0.Final
+INFO  - 2015-01-15 13:29:41.121; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:29:41.210; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:29:41.221; fr.eseo.sensor.api.dao.HibernateUtil; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:29:41.568; fr.eseo.sensor.api.dao.HibernateUtilTest; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:29:41.569; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:29:41.569; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:29:41.571; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:29:41.575; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:29:41.583; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:29:41.584; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:29:41.585; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:29:41.586; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:29:41.587; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:29:41.608; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:29:41.621; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:29:41.621; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:29:41.658; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:29:41.731; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:29:41.732; fr.eseo.sensor.api.dao.HibernateUtilTest; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:29:41.753; fr.eseo.sensor.api.dao.DataDao; Can't delete data with id : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:29:41.782; fr.eseo.sensor.api.dao.SensorDao; Can't delete Sensor : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:30:14.604; fr.eseo.sensor.api.dao.HibernateUtil; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:30:14.792; org.hibernate.annotations.common.reflection.java.JavaReflectionManager; HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  - 2015-01-15 13:30:14.799; org.hibernate.Version; HHH000412: Hibernate Core {4.3.7.Final}
+INFO  - 2015-01-15 13:30:14.801; org.hibernate.cfg.Environment; HHH000206: hibernate.properties not found
+INFO  - 2015-01-15 13:30:14.803; org.hibernate.cfg.Environment; HHH000021: Bytecode provider name : javassist
+INFO  - 2015-01-15 13:30:14.826; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:30:14.826; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:30:14.899; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:30:14.936; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:30:15.059; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:30:15.063; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:30:15.064; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:30:15.064; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:30:15.066; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:30:15.296; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:30:15.508; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:30:15.517; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:30:15.580; org.hibernate.validator.util.Version; Hibernate Validator 4.2.0.Final
+INFO  - 2015-01-15 13:30:15.975; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:30:16.054; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:30:16.064; fr.eseo.sensor.api.dao.HibernateUtil; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:30:16.420; fr.eseo.sensor.api.dao.HibernateUtilTest; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:30:16.421; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:30:16.421; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:30:16.423; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:30:16.428; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:30:16.440; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:30:16.440; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:30:16.441; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:30:16.441; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:30:16.442; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:30:16.461; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:30:16.474; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:30:16.474; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:30:16.520; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:30:16.591; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:30:16.593; fr.eseo.sensor.api.dao.HibernateUtilTest; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:30:16.613; fr.eseo.sensor.api.dao.DataDao; Can't delete data with id : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:30:16.646; fr.eseo.sensor.api.dao.SensorDao; Can't delete Sensor : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:30:20.287; fr.eseo.sensor.api.dao.HibernateUtil; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:30:20.458; org.hibernate.annotations.common.reflection.java.JavaReflectionManager; HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  - 2015-01-15 13:30:20.465; org.hibernate.Version; HHH000412: Hibernate Core {4.3.7.Final}
+INFO  - 2015-01-15 13:30:20.467; org.hibernate.cfg.Environment; HHH000206: hibernate.properties not found
+INFO  - 2015-01-15 13:30:20.469; org.hibernate.cfg.Environment; HHH000021: Bytecode provider name : javassist
+INFO  - 2015-01-15 13:30:20.495; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:30:20.496; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:30:20.652; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:30:20.685; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:30:20.792; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:30:20.796; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:30:20.797; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:30:20.797; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:30:20.799; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:30:21.031; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:30:21.245; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:30:21.251; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:30:21.310; org.hibernate.validator.util.Version; Hibernate Validator 4.2.0.Final
+INFO  - 2015-01-15 13:30:21.688; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:30:21.765; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:30:21.774; fr.eseo.sensor.api.dao.HibernateUtil; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:30:22.115; fr.eseo.sensor.api.dao.HibernateUtilTest; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:30:22.116; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:30:22.117; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:30:22.119; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:30:22.122; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:30:22.130; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:30:22.131; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:30:22.132; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:30:22.132; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:30:22.134; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:30:22.153; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:30:22.169; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:30:22.170; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:30:22.207; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:30:22.284; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:30:22.286; fr.eseo.sensor.api.dao.HibernateUtilTest; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:30:22.306; fr.eseo.sensor.api.dao.DataDao; Can't delete data with id : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:30:22.337; fr.eseo.sensor.api.dao.SensorDao; Can't delete Sensor : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:31:48.189; fr.eseo.sensor.api.dao.HibernateUtil; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:31:48.375; org.hibernate.annotations.common.reflection.java.JavaReflectionManager; HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  - 2015-01-15 13:31:48.383; org.hibernate.Version; HHH000412: Hibernate Core {4.3.7.Final}
+INFO  - 2015-01-15 13:31:48.385; org.hibernate.cfg.Environment; HHH000206: hibernate.properties not found
+INFO  - 2015-01-15 13:31:48.387; org.hibernate.cfg.Environment; HHH000021: Bytecode provider name : javassist
+INFO  - 2015-01-15 13:31:48.413; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:31:48.414; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:31:48.472; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:31:48.507; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:31:48.630; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:31:48.635; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:31:48.635; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:31:48.636; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:31:48.637; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:31:48.872; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:31:49.079; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:31:49.085; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:31:49.141; org.hibernate.validator.util.Version; Hibernate Validator 4.2.0.Final
+INFO  - 2015-01-15 13:31:49.506; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:31:49.577; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:31:49.588; fr.eseo.sensor.api.dao.HibernateUtil; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:31:49.929; fr.eseo.sensor.api.dao.HibernateUtilTest; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:31:49.930; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:31:49.930; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:31:49.932; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:31:49.938; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:31:49.947; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:31:49.948; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:31:49.948; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:31:49.949; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:31:49.949; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:31:49.972; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:31:49.985; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:31:49.985; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:31:50.020; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:31:50.101; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:31:50.102; fr.eseo.sensor.api.dao.HibernateUtilTest; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:31:50.124; fr.eseo.sensor.api.dao.DataDao; Can't delete data with id : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:31:50.155; fr.eseo.sensor.api.dao.SensorDao; Can't delete Sensor : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:31:53.631; fr.eseo.sensor.api.dao.HibernateUtil; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:31:53.774; org.hibernate.annotations.common.reflection.java.JavaReflectionManager; HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+INFO  - 2015-01-15 13:31:53.780; org.hibernate.Version; HHH000412: Hibernate Core {4.3.7.Final}
+INFO  - 2015-01-15 13:31:53.782; org.hibernate.cfg.Environment; HHH000206: hibernate.properties not found
+INFO  - 2015-01-15 13:31:53.783; org.hibernate.cfg.Environment; HHH000021: Bytecode provider name : javassist
+INFO  - 2015-01-15 13:31:53.805; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:31:53.805; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:31:53.938; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:31:53.969; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:31:54.070; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:31:54.074; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:31:54.075; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:31:54.075; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:31:54.077; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:31:54.306; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:31:54.536; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:31:54.542; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:31:54.598; org.hibernate.validator.util.Version; Hibernate Validator 4.2.0.Final
+INFO  - 2015-01-15 13:31:54.947; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:31:55.034; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:31:55.045; fr.eseo.sensor.api.dao.HibernateUtil; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:31:55.371; fr.eseo.sensor.api.dao.HibernateUtilTest; Trying to create a test connection with the database.
+INFO  - 2015-01-15 13:31:55.372; org.hibernate.cfg.Configuration; HHH000043: Configuring from resource: hibernate.cfg.xml
+INFO  - 2015-01-15 13:31:55.372; org.hibernate.cfg.Configuration; HHH000040: Configuration resource: hibernate.cfg.xml
+WARN  - 2015-01-15 13:31:55.374; org.hibernate.internal.util.xml.DTDEntityResolver; HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+INFO  - 2015-01-15 13:31:55.377; org.hibernate.cfg.Configuration; HHH000041: Configured SessionFactory: null
+WARN  - 2015-01-15 13:31:55.386; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000402: Using Hibernate built-in connection pool (not for production use!)
+INFO  - 2015-01-15 13:31:55.386; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/APISensorTest]
+INFO  - 2015-01-15 13:31:55.387; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000046: Connection properties: {user=root, password=****}
+INFO  - 2015-01-15 13:31:55.388; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000006: Autocommit mode: false
+INFO  - 2015-01-15 13:31:55.389; org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl; HHH000115: Hibernate connection pool size: 1 (min=1)
+INFO  - 2015-01-15 13:31:55.414; org.hibernate.dialect.Dialect; HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+INFO  - 2015-01-15 13:31:55.428; org.hibernate.engine.transaction.internal.TransactionFactoryInitiator; HHH000399: Using default transaction strategy (direct JDBC transactions)
+INFO  - 2015-01-15 13:31:55.429; org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory; HHH000397: Using ASTQueryTranslatorFactory
+INFO  - 2015-01-15 13:31:55.463; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000227: Running hbm2ddl schema export
+INFO  - 2015-01-15 13:31:55.541; org.hibernate.tool.hbm2ddl.SchemaExport; HHH000230: Schema export complete
+INFO  - 2015-01-15 13:31:55.543; fr.eseo.sensor.api.dao.HibernateUtilTest; Test connection with the database created successfuly.
+INFO  - 2015-01-15 13:31:55.564; fr.eseo.sensor.api.dao.DataDao; Can't delete data with id : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
+INFO  - 2015-01-15 13:31:55.593; fr.eseo.sensor.api.dao.SensorDao; Can't delete Sensor : -1
+ Trace : java.lang.IllegalArgumentException: attempt to create delete event with null entity
