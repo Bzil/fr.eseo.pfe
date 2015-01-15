@@ -50,7 +50,7 @@ public abstract class MyDaoManager<T> {
 	 * <h2>Method which adds a given object from the model in the database.</h2>
 	 * @param object Object to add.
 	 */
-	public boolean add(T object){
+	public boolean add(T object) throws RuntimeException{
 		Session session = getSessionFactory().getCurrentSession();
 		Transaction transaction = session.beginTransaction();
 		boolean success = true;
@@ -61,7 +61,7 @@ public abstract class MyDaoManager<T> {
 		catch (RuntimeException e){
 			success = false;
 			transaction.rollback();
-			//throw e ;
+			throw e ;
 		}
 		return success;
 	}
@@ -70,7 +70,7 @@ public abstract class MyDaoManager<T> {
 	 * <h2>Method which updates a given Object from the model in the database.</h2>
 	 * @param object Object to update.
 	 */
-	public void update(T object){
+	public void update(T object) throws RuntimeException {
 		Session session = getSessionFactory().getCurrentSession();
 		Transaction transaction = session.beginTransaction();
 		try {
@@ -79,7 +79,7 @@ public abstract class MyDaoManager<T> {
 		}
 		catch (RuntimeException e){
 			transaction.rollback();
-			//throw e ;
+			throw e ;
 		}
 	}
 	
@@ -87,7 +87,7 @@ public abstract class MyDaoManager<T> {
 	 * <h2>Method which saves or updates a given Object from the model in the database.</h2>
 	 * @param object Object to update.
 	 */
-	public void saveOrUpdate(T object){
+	public void saveOrUpdate(T object) throws RuntimeException {
 		Session session = getSessionFactory().getCurrentSession();
 		Transaction transaction = session.beginTransaction();
 		try {
@@ -96,14 +96,14 @@ public abstract class MyDaoManager<T> {
 		}
 		catch (RuntimeException e){
 			transaction.rollback();
-			//throw e ;
+			throw e ;
 		}
 	}
 	/**
 	 * <h2>Method which merge a given Object from the model in the database.</h2>
 	 * @param object Object to update.
 	 */
-	public void merge(T object){
+	public void merge(T object) throws RuntimeException {
 		Session session = getSessionFactory().getCurrentSession();
 		Transaction transaction = session.beginTransaction();
 		try {
@@ -112,7 +112,7 @@ public abstract class MyDaoManager<T> {
 		}
 		catch (RuntimeException e){
 			transaction.rollback();
-			//throw e ;
+			throw e ;
 		}
 	}
 
@@ -121,20 +121,21 @@ public abstract class MyDaoManager<T> {
 	 * @param id The object's id to get.
 	 * @return An object.
 	 */
-	public abstract T getOne(int id);
+	public abstract T getOne(int id) throws RuntimeException;
 
 	/**
 	 * <h2>Method which gets all of an object from the model.</h2>
 	 * @return A list of the object.
 	 */
-	public abstract List<T> getAll();
+	public abstract List<T> getAll() throws RuntimeException;
 
 	/**
 	 * <h2>Method which deletes a given object thanks to its id.</h2>
 	 * @param id The object's id to delete.
 	 * @return result of operation
 	 */
-	public abstract boolean delete(int id);
+	public abstract boolean delete(int id) throws RuntimeException;
+	
 	/**
 	 * <h2>Method which gets a list of an object from the model.</h2>
 	 * @param size of the list expected

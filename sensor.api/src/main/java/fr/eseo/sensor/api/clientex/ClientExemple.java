@@ -52,7 +52,10 @@ public class ClientExemple {
 		}
 	}
 	private void addDataEx(){
-		Sensor sensor = new Sensor(new Date(System.currentTimeMillis()), "s",SensorType.GRAPH);
+		Sensor sensor = new Sensor();
+		sensor.setAddDate(new Date(System.currentTimeMillis()));
+		sensor.setUnity("s");
+		sensor.setSensorType(SensorType.GRAPH);
 		Data input = new Data();
 		input.setDate(new Date(System.currentTimeMillis()));
 		input.setIsOnPhone(false);

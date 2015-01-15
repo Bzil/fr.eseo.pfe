@@ -15,24 +15,24 @@ import fr.eseo.sensor.api.bean.Data;
  * @version 1.0
  */
 public class DataDao extends MyDaoManager<Data>{
-	
+
 	private static final Log LOGGER = LogFactory.getLog(DataDao.class);
-	
+
 	public DataDao(){
 		super();
 	}
-	
+
 	/**
 	 * @see MyDaoManager#getOne(int)
 	 */
 	@Override
-	public Data getOne(int id) {
+	public Data getOne(int id) throws RuntimeException {
 		Session session = getSessionFactory().getCurrentSession();
 		Transaction  transaction = session.beginTransaction();
 		Data data = null;
 
 		try {
-			Query query = session.createQuery("FROM Data d WHERE d.id= :id").setParameter("id", id);
+			Query query = session.createQuery("FROM Data d WHERE d.id=:id").setParameter("id", id);
 			data = (Data)query.uniqueResult();
 			transaction.commit();
 		}
@@ -47,39 +47,33 @@ public class DataDao extends MyDaoManager<Data>{
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Data> getAll() {
+	public List<Data> getAll() throws RuntimeException {
 		Session session = getSessionFactory().getCurrentSession();
 		Transaction  transaction = session.beginTransaction();
 		List<Data> list = null;
+		list = session.createQuery("FROM Data d").list();
+		transaction.commit();
 
-		try {
-			list = session.createQuery("FROM Data d").list();
-			transaction.commit();
-		}
-		catch (RuntimeException e){
-			transaction.rollback();
-			throw e ;
-		}	
 		return list;
 	}
 	/**
 	 * @see MyDaoManager#delete(int)
 	 */
 	@Override
-	public boolean delete(int id) {
-		boolean result = true;
-		Session session = getSessionFactory().getCurrentSession();
+	public boolean delete(int id) throws RuntimeException {
+		boolean result = false;
 		Data data = getOne(id);
+		Session session = getSessionFactory().getCurrentSession();
 		Transaction transaction = session.beginTransaction();
 		try {
 			session.delete(data);
 			transaction.commit();
+			result = true;
 		}
 		catch (RuntimeException e){
 			LOGGER.info("Can't delete data with id : " + id + "\n Trace : "+ e);
 			transaction.rollback();
-			result = false;
-			//throw e ;
+			throw e ;
 		}
 		return result;
 	}
@@ -89,21 +83,15 @@ public class DataDao extends MyDaoManager<Data>{
 	 * @return list of data found
 	 */
 	@SuppressWarnings("unchecked")
-	public List<Data> getAllFromSensor(int id){
+	public List<Data> getAllFromSensor(int id) throws RuntimeException {
 		Session session = getSessionFactory().getCurrentSession();
 		Transaction  transaction = session.beginTransaction();
 		List<Data> list = null;
+		Query query = session.createQuery("FROM Data WHERE sensor_id=:sensorId");
+		query.setParameter("sensorId", id);
+		list = query.list();
+		transaction.commit();
 
-		try {
-			Query query = session.createQuery("FROM Data WHERE sensor_id=:sensorId");
-			query.setParameter("sensorId", id);
-			list = query.list();
-			transaction.commit();
-		}
-		catch (RuntimeException e){
-			transaction.rollback();
-			throw e ;
-		}	
 		return list;
 	}
 	/**
@@ -112,7 +100,7 @@ public class DataDao extends MyDaoManager<Data>{
 	 * @return list of data found
 	 */
 	@SuppressWarnings("unchecked")
-	public List<Data> getOldData(int dateDiff){
+	public List<Data> getOldData(int dateDiff) throws RuntimeException {
 		Session session = getSessionFactory().getCurrentSession();
 		Transaction  transaction = session.beginTransaction();
 		List<Data> list = null;

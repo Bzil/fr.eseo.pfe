@@ -60,7 +60,7 @@ public class Sensor implements Serializable {
 	@Type(type="true_false")
 	private Boolean lowBattery;
 	/**
-	 * Place where the sensor is locate
+	 * Location of the sensor
 	 */
 	@NotNull
 	private String place;
@@ -75,13 +75,6 @@ public class Sensor implements Serializable {
 	
 	public Sensor() {
 		// for hibernate
-	}
-
-	public Sensor(Date addDate, String unity, SensorType sensorType) {
-		super();
-		this.addDate = addDate;
-		this.unity = unity;
-		this.sensorType = sensorType;
 	}
 
 	public Date getAddDate() {
@@ -145,10 +138,10 @@ public class Sensor implements Serializable {
 
 	@Override
 	public String toString(){
-		return new StringBuffer(" Id : ").append(this.id)
-				.append(" SensorType : ").append(this.sensorType)
-				.append(" Fs : ").append(this.samplingFrequency)
-				.append(" unity : ").append(this.unity)
+		return new StringBuffer(" Id : ").append(getId())
+				.append(" SensorType : ").append(getSensorType())
+				.append(" Fs : ").append(getSamplingFrequency())
+				.append(" unity : ").append(getUnity())
 				.toString();
 	}
 

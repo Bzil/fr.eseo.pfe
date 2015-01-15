@@ -67,14 +67,6 @@ public class Data implements Serializable{
 		// for hibernate
 	}
 
-	public Data(Sensor sensor, String value, int order) {
-		super();
-		// definir dans le spec, 
-		//this.date = new Date(long)(System.currentTimeMillis()-1000*order));
-		this.setSensor(sensor);
-		this.value = value;
-	}
-
 	public Date getDate() {
 		return date;
 	}
@@ -124,11 +116,11 @@ public class Data implements Serializable{
 	
 	@Override
 	public String toString(){
-		return new StringBuffer(" Id : ").append(this.id)
-				.append(" Value : ").append(this.value)
-				.append(" Sensor Id : ").append((sensor != null) ? this.sensor.getId() : "null")
-				.append(" Date : ").append(this.date)
-				.append(" On Phone :").append(this.isOnPhone)
+		return new StringBuffer(" Id : ").append(getId())
+				.append(" Value : ").append(getValue())
+				.append(" Sensor Id : ").append((getSensor() != null) ? this.getSensor().getId() : "null")
+				.append(" Date : ").append(getDate())
+				.append(" On Phone :").append(getIsOnPhone())
 				.toString();
 	}
 

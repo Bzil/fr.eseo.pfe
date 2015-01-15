@@ -16,8 +16,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import fr.eseo.sensor.api.bean.Data;
-import fr.eseo.sensor.api.bean.Sensor;
-import fr.eseo.sensor.api.bean.SensorType;
 import fr.eseo.sensor.api.dao.DataDao;
 import fr.eseo.sensor.api.dao.SensorDao;
 /**
@@ -39,8 +37,16 @@ public class DataService {
 	/**
 	 * Data dao
 	 */
-	private DataDao dataDao = new DataDao();
+	private DataDao dataDao;
 	
+	public DataService(){
+		this(new DataDao());
+	}
+	
+	public DataService(DataDao dataDao) {
+		super();
+		this.dataDao = dataDao;
+	}
 	/**
 	 * Produce in json the full list of data containts in base 
 	 * @return list of data
@@ -108,11 +114,7 @@ public class DataService {
 	@POST
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)    
 	@Path("/post")
-	public Response createSensorInJSON(
-			@FormParam("date") String date,
-			@FormParam("value") String value,
-			@FormParam("sensorId") String sensorId
-			) {
+	public Response createSensorInJSON(@FormParam("date") String date,@FormParam("value") String value,@FormParam("sensorId") String sensorId) {
 		Data data = new Data();
 		SensorDao sensorDao = new SensorDao();
 		data.setValue(value);
@@ -126,5 +128,12 @@ public class DataService {
 		dataDao.saveOrUpdate(data);
 		String result = "Data saved : " + data;
 		return Response.status(201).entity(result).build();       
+	}
+	
+	public DataDao getDataDao() {
+		return dataDao;
+	}
+	public void setDataDao(DataDao dataDao) {
+		this.dataDao = dataDao;
 	}
 }
