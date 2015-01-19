@@ -2,11 +2,15 @@ package fr.eseo.sensor.api.service;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyInt;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.ws.rs.core.Response;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -108,5 +112,22 @@ public class SensorServiceTest {
 		assertNull(ss.getLastData("1"));
 	}
 	
+	@Test
+	public void testCreateSensorInJSON(){
+		Sensor s = DataGenerator.getOneSensor(false);
+		doNothing().when(daoMock).saveOrUpdate(any(Sensor.class));;
 
+		Response r = ss.createSensorInJSON(s);
+		assertEquals(201,r.getStatus());
+		assertEquals("Data saved :  Id : 0 SensorType : ARROW Fs : 0 unity : m", r.getEntity().toString());
+	}
+	
+	@Test
+	public void testCreateSensorInJSONWithParameter(){
+		doNothing().when(daoMock).saveOrUpdate(any(Sensor.class));;
+
+		Response r = ss.createSensorInJSON("18-11-1990", "m", "ARROW", (long)0);
+		assertEquals(201,r.getStatus());
+		assertEquals("Data saved :  Id : 0 SensorType : ARROW Fs : 0 unity : m", r.getEntity().toString());
+	}
 }

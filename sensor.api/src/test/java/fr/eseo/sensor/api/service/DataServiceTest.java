@@ -2,11 +2,15 @@ package fr.eseo.sensor.api.service;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
+import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.doReturn;
+import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyInt;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.ws.rs.core.Response;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -15,6 +19,7 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import fr.eseo.sensor.api.bean.Data;
+import fr.eseo.sensor.api.bean.Sensor;
 import fr.eseo.sensor.api.dao.DataDao;
 import fr.eseo.sensor.api.util.DataGenerator;
 
@@ -107,5 +112,22 @@ public class DataServiceTest {
 		assertNull(ds.getLastData("1"));
 	}
 
+	@Test
+	public void testCreateDataInJSON(){
+		Data d = DataGenerator.getOneData(false);
+		doNothing().when(daoMock).saveOrUpdate(any(Data.class));;
+
+		Response r = ds.createDataInJSON(d);
+		assertEquals(201,r.getStatus());
+		assertEquals("Data saved :  Id : 0 Value : 3,2 Sensor Id : 0 Date : Sun Nov 18 00:00:00 CET 1990 On Phone :false", r.getEntity().toString());
+	}
 	
+	@Test
+	public void testCreateSensorInJSONWithParameter(){
+		doNothing().when(daoMock).saveOrUpdate(any(Data.class));;
+		
+		Response r = ds.createDataInJSON("18-11-1990", "3,2", "0");
+		assertEquals(201,r.getStatus());
+		assertEquals("Data saved :  Id : 0 Value : 3,2 Sensor Id : null Date : Sun Nov 18 00:00:00 CET 1990 On Phone :null", r.getEntity().toString());
+	}
 }

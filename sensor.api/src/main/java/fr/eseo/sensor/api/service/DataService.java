@@ -114,7 +114,7 @@ public class DataService {
 	@POST
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)    
 	@Path("/post")
-	public Response createSensorInJSON(@FormParam("date") String date,@FormParam("value") String value,@FormParam("sensorId") String sensorId) {
+	public Response createDataInJSON(@FormParam("date") String date,@FormParam("value") String value,@FormParam("sensorId") String sensorId) {
 		Data data = new Data();
 		SensorDao sensorDao = new SensorDao();
 		data.setValue(value);

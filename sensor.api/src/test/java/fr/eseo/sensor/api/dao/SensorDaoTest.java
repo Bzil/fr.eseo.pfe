@@ -80,14 +80,14 @@ public class SensorDaoTest {
 	public void testGetAll(){
 		List<Sensor> found = dao.getAll();
 		assertNotNull(found);
-		assertEquals(3,found.size());
+		assertEquals(2,found.size());
 	}
 
 	@Test( expected = RuntimeException.class )
 	public void testDeleteFailure(){
 		assertNull(dao.delete(-1));
 	}
-	@Ignore
+
 	@Test
 	public void testDeleteSuccess(){
 		assertTrue(dao.delete(1));
