@@ -118,7 +118,7 @@ public class DataServiceTest {
 
 		Response r = ds.createDataInJSON(d);
 		assertEquals(201,r.getStatus());
-		assertEquals("Data saved :  Id : 0 Value : 3,2 Sensor Id : 0 Date : Sun Nov 18 00:00:00 CET 1990 On Phone :false", r.getEntity().toString());
+		assertEquals("Data saved :  Id : 0 Value : 3,2 Sensor Id : 0 Date : 1990-11-18 00:00:00.0 On Phone :false", r.getEntity().toString());
 	}
 	
 	@Test
@@ -127,6 +127,6 @@ public class DataServiceTest {
 		
 		Response r = ds.createDataInJSON("18-11-1990 00:00:00", "3,2", "0");
 		assertEquals(201,r.getStatus());
-		assertEquals("Data saved :  Id : 0 Value : 3,2 Sensor Id : null Date : Sun Nov 18 00:00:00 CET 1990 On Phone :null", r.getEntity().toString());
+		assertEquals("Data saved :  Id : 0 Value : 3,2 Sensor Id : null Date : 1990-11-18 00:00:00.0 On Phone :null", r.getEntity().toString());
 	}
 }
