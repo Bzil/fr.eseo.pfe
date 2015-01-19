@@ -29,7 +29,7 @@ public class DataService {
 	/**
 	 * Date parser
 	 */
-	private static final SimpleDateFormat DATE_FORMATTER = new SimpleDateFormat("dd-MM-yyyy");
+	private static final SimpleDateFormat DATE_FORMATTER = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 	/**
 	 * Specific encoding type
 	 */
@@ -120,9 +120,9 @@ public class DataService {
 		data.setValue(value);
 		data.setSensor(sensorDao.getOne(Integer.parseInt(sensorId)));
 		try {
-			data.setDate(DATE_FORMATTER.parse(date));
+			data.setDate(DATE_FORMATTER.parse(date).getTime());
 		} catch ( ParseException e){
-			data.setDate(new Date(System.currentTimeMillis()));
+			data.setDate(System.currentTimeMillis());
 		}
 
 		dataDao.saveOrUpdate(data);

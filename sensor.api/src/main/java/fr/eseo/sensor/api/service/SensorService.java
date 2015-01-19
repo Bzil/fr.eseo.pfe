@@ -28,7 +28,7 @@ public class SensorService {
 	/**
 	 * Date formatter to add date with the same pattern
 	 */
-	private static final SimpleDateFormat DATE_FORMATTER = new SimpleDateFormat("dd-MMM-yyyy");
+	private static final SimpleDateFormat DATE_FORMATTER = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 	/**
 	 * Specific encoding
 	 */

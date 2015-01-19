@@ -19,7 +19,6 @@ import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
 import fr.eseo.sensor.api.bean.Data;
-import fr.eseo.sensor.api.bean.Sensor;
 import fr.eseo.sensor.api.dao.DataDao;
 import fr.eseo.sensor.api.util.DataGenerator;
 
@@ -126,7 +125,7 @@ public class DataServiceTest {
 	public void testCreateSensorInJSONWithParameter(){
 		doNothing().when(daoMock).saveOrUpdate(any(Data.class));;
 		
-		Response r = ds.createDataInJSON("18-11-1990", "3,2", "0");
+		Response r = ds.createDataInJSON("18-11-1990 00:00:00", "3,2", "0");
 		assertEquals(201,r.getStatus());
 		assertEquals("Data saved :  Id : 0 Value : 3,2 Sensor Id : null Date : Sun Nov 18 00:00:00 CET 1990 On Phone :null", r.getEntity().toString());
 	}

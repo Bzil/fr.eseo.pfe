@@ -57,7 +57,7 @@ public class ClientExemple {
 		sensor.setUnity("s");
 		sensor.setSensorType(SensorType.GRAPH);
 		Data input = new Data();
-		input.setDate(new Date(System.currentTimeMillis()));
+		input.setDate(System.currentTimeMillis());
 		input.setIsOnPhone(false);
 		input.setValue("11");
 		input.setSensor(sensor);

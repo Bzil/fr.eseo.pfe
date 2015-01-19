@@ -1,6 +1,7 @@
 package fr.eseo.sensor.api.bean;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 import java.util.Date;
 
 import javax.persistence.Entity;
@@ -39,7 +40,7 @@ public class Data implements Serializable{
 	 * the date of the mesure
 	 */
 	@NotNull
-	private Date date;
+	private Timestamp date;
 	/**
 	 * 
 	 */
@@ -67,12 +68,16 @@ public class Data implements Serializable{
 		// for hibernate
 	}
 
-	public Date getDate() {
+	public Timestamp getDate() {
 		return date;
 	}
 
-	public void setDate(Date date) {
+	public void setDate(Timestamp date) {
 		this.date = date;
+	}
+	
+	public void setDate(long date) {
+		this.date = new Timestamp(date);
 	}
 	
 	public Sensor getSensor() {

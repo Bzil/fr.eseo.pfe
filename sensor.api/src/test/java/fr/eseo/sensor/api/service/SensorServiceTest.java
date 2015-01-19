@@ -126,7 +126,7 @@ public class SensorServiceTest {
 	public void testCreateSensorInJSONWithParameter(){
 		doNothing().when(daoMock).saveOrUpdate(any(Sensor.class));;
 
-		Response r = ss.createSensorInJSON("18-11-1990", "m", "ARROW", (long)0);
+		Response r = ss.createSensorInJSON("18-11-1990 00:00:00", "m", "ARROW", (long)0);
 		assertEquals(201,r.getStatus());
 		assertEquals("Data saved :  Id : 0 SensorType : ARROW Fs : 0 unity : m", r.getEntity().toString());
 	}

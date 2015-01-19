@@ -9,11 +9,12 @@ import fr.eseo.sensor.api.bean.SensorType;
 
 public class DataGenerator {
 
+	private static final SimpleDateFormat DATE_FORMATTER = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+	
 	public static Data getOneData(boolean onPhone){
 		Data data = new Data();
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		try {
-			data.setDate(simpleDateFormat.parse("18/11/1990"));
+			data.setDate(DATE_FORMATTER.parse("18-11-1990 00:00:00").getTime());
 		} catch (ParseException e) {
 		}
 		data.setIsOnPhone(onPhone);
@@ -30,9 +31,8 @@ public class DataGenerator {
 	
 	public static Sensor getOneSensor(boolean lowBattery){
 		Sensor sensor = new Sensor();
-		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd/MM/yyyy");
 		try {
-			sensor.setAddDate(simpleDateFormat.parse("18/11/1990"));
+			sensor.setAddDate(DATE_FORMATTER.parse("18-11-1990 00:00:00"));
 		} catch (ParseException e) {
 		}
 		sensor.setLowBattery(lowBattery);

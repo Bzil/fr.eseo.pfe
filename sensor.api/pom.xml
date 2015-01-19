@@ -19,9 +19,11 @@
 
 	<properties>
 		<junit.version>4.11</junit.version>
-		<jersey.version>1.18.2</jersey.version>
+		<jersey.version>1.18.1</jersey.version>
 		<mysql.version>5.1.18</mysql.version>
+		<hibernate.version>4.3.8.Final</hibernate.version>
 		<tomcat-server>localhost</tomcat-server>
+		
 		<tomcat-url>http://localhost:8080/manager/text</tomcat-url>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -58,27 +60,27 @@
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-server</artifactId>
-			<version>1.17.1</version>
+			<version>${jersey.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-core</artifactId>
-			<version>1.17.1</version>
+			<version>${jersey.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-servlet</artifactId>
-			<version>1.17.1</version>
+			<version>${jersey.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-json</artifactId>
-			<version>1.18.1</version>
+			<version>${jersey.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.sun.jersey</groupId>
 			<artifactId>jersey-client</artifactId>
-			<version>1.8</version>
+			<version>${jersey.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.owlike</groupId>
@@ -143,13 +145,6 @@
 			<version>1.1.1</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.6.4</version>
-		</dependency>
-
-
 		<!-- JUnit -->
 		<dependency>
 			<groupId>junit</groupId>
@@ -167,7 +162,6 @@
 	<build>
 		<finalName>sensorAPI</finalName>
 		<plugins>
-
 			<!-- For Maven Tomcat Plugin -->
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
