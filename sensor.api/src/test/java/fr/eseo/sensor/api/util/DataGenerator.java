@@ -1,5 +1,6 @@
 package fr.eseo.sensor.api.util;
 
+import java.awt.geom.Point2D;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
@@ -38,7 +39,7 @@ public class DataGenerator {
 		sensor.setLowBattery(lowBattery);
 		sensor.setSamplingFrequency(0);
 		sensor.setSensorType(SensorType.ARROW);
-		sensor.setPlace("place");
+		sensor.setGpsLocation(new Point2D.Double(-0.127512, 51.507222));
 		sensor.setUnity("m");
 		return sensor;
 	}

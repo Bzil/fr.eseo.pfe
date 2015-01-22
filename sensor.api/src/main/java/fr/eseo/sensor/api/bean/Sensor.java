@@ -1,5 +1,6 @@
 package fr.eseo.sensor.api.bean;
 
+import java.awt.geom.Point2D;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
@@ -60,10 +61,9 @@ public class Sensor implements Serializable {
 	@Type(type="true_false")
 	private Boolean lowBattery;
 	/**
-	 * Location of the sensor
+	 * Location of the sensor, should be send by smartphone
 	 */
-	@NotNull
-	private String place;
+	private Point2D.Double gpsLocation;
 	
 	@OneToMany(mappedBy="sensor", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	private Set<Data> datas = new HashSet<Data>();
@@ -128,12 +128,17 @@ public class Sensor implements Serializable {
 	public void setLowBattery(Boolean lowBattery) {
 		this.lowBattery = lowBattery;
 	}
-	public String getPlace() {
-		return this.place;
+	
+	public Point2D.Double getGpsLocation() {
+		return gpsLocation;
 	}
 
-	public void setPlace(String place) {
-		this.place = place;
+	public void setGpsLocation(Point2D.Double gpsLocation) {
+		this.gpsLocation = gpsLocation;
+	}
+
+	private void setId(int id) {
+		this.id = id;
 	}
 
 	@Override
