@@ -8,6 +8,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -100,7 +101,7 @@ public class DataService {
 	public Response createDataInJSON(Data data) {
 		dataDao.saveOrUpdate(data);
 		String result = "Data saved : " + data;
-		return Response.status(201).entity(result).build();
+		return Response.status(Response.Status.CREATED).entity(result).build();
 	}
 	
 	/**
@@ -126,7 +127,7 @@ public class DataService {
 
 		dataDao.saveOrUpdate(data);
 		String result = "Data saved : " + data;
-		return Response.status(201).entity(result).build();       
+		return Response.status(Response.Status.CREATED).entity(result).build();       
 	}
 	
 	public DataDao getDataDao() {

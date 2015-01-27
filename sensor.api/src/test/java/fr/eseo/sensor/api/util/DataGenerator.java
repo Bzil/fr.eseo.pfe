@@ -39,7 +39,8 @@ public class DataGenerator {
 		sensor.setLowBattery(lowBattery);
 		sensor.setSamplingFrequency(0);
 		sensor.setSensorType(SensorType.ARROW);
-		sensor.setGpsLocation(new Point2D.Double(-0.127512, 51.507222));
+		sensor.setStatementFrequency(1222);
+		sensor.setGpsLocation(-0.127512, 51.507222);
 		sensor.setUnity("m");
 		return sensor;
 	}

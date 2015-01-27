@@ -9,6 +9,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
+import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -37,11 +38,11 @@ public class SensorService {
 	 * Sensor dao
 	 */
 	private SensorDao sensorDao;
-	
+
 	public SensorService(){
 		this(new SensorDao());
 	}
-	
+
 	public SensorService(SensorDao sensorDao) {
 		super();
 		this.sensorDao = sensorDao;
@@ -84,7 +85,7 @@ public class SensorService {
 	public Response createSensorInJSON(Sensor sensor) {
 		sensorDao.saveOrUpdate(sensor);
 		String result = "Data saved : " + sensor;
-		return Response.status(201).entity(result).build();
+		return Response.status(Response.Status.CREATED).entity(result).build();
 	}
 	/**
 	 * Service to Add one sensor
@@ -115,7 +116,7 @@ public class SensorService {
 
 		sensorDao.saveOrUpdate(sensor);
 		String result = "Data saved : " + sensor;
-		return Response.status(201).entity(result).build();       
+		return Response.status(Response.Status.CREATED).entity(result).build();       
 	}
 	/**
 	 * Get a list of lastest data
@@ -129,6 +130,26 @@ public class SensorService {
 		return sensorDao.getLastest(Integer.parseInt(size));
 	}
 
+	@PUT
+	@Path("{id}")
+	@Consumes(MediaType.APPLICATION_JSON)
+	//@Produces({ MediaType.TEXT_HTML })
+	public Response putPodcastById(@PathParam("id") int id, Sensor sensor) {
+
+		Sensor podcastById = sensorDao.getOne(id);
+
+		if (podcastById == null) {
+			// resource not existent yet, and should be created under the
+			// specified URI
+			sensorDao.saveOrUpdate(sensor);
+			return Response.status(Response.Status.CREATED).entity("Data saved : " + sensor).build();
+		} else {
+			// resource is existent and a full update should occur
+			sensorDao.update(sensor);;
+			return Response.status(Response.Status.OK).entity("Data saved : " + sensor).build();
+		}
+	}
+
 	public SensorDao getSensorDao() {
 		return sensorDao;
 	}
@@ -136,6 +157,4 @@ public class SensorService {
 	public void setSensorDao(SensorDao sensorDao) {
 		this.sensorDao = sensorDao;
 	}
-	
-	
 }

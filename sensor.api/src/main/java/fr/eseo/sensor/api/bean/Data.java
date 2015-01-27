@@ -19,7 +19,7 @@ import org.hibernate.annotations.Type;
 /**
  * Class who define the data send by the sensor
  * @author Basile CHAPELLIER
- *	@version 1.0
+ * @version 1.0
  */
 
 @Entity

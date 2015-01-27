@@ -119,7 +119,7 @@ public class SensorServiceTest {
 
 		Response r = ss.createSensorInJSON(s);
 		assertEquals(201,r.getStatus());
-		assertEquals("Data saved :  Id : 0 SensorType : ARROW Fs : 0 unity : m", r.getEntity().toString());
+		assertEquals("Data saved :  Id : 0 SensorType : ARROW Fs : 0 Fe : 1222 unity : m", r.getEntity().toString());
 	}
 	
 	@Test
@@ -128,6 +128,6 @@ public class SensorServiceTest {
 
 		Response r = ss.createSensorInJSON("18-11-1990 00:00:00", "m", "ARROW", (long)0);
 		assertEquals(201,r.getStatus());
-		assertEquals("Data saved :  Id : 0 SensorType : ARROW Fs : 0 unity : m", r.getEntity().toString());
+		assertEquals("Data saved :  Id : 0 SensorType : ARROW Fs : 0 Fe : 0 unity : m", r.getEntity().toString());
 	}
 }

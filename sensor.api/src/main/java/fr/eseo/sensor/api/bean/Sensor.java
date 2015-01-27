@@ -15,7 +15,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.NotNull;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 import org.hibernate.annotations.Type;
 /**
@@ -26,6 +29,7 @@ import org.hibernate.annotations.Type;
 
 @Entity
 @XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Sensor implements Serializable {
 
 	/**
@@ -63,7 +67,12 @@ public class Sensor implements Serializable {
 	/**
 	 * Location of the sensor, should be send by smartphone
 	 */
-	private Point2D.Double gpsLocation;
+	private double longitude;
+	private double latitude;
+	/**
+	 * Name of the sensor
+	 */
+	private String name;
 	
 	@OneToMany(mappedBy="sensor", cascade=CascadeType.ALL, fetch=FetchType.EAGER)
 	private Set<Data> datas = new HashSet<Data>();
@@ -72,7 +81,12 @@ public class Sensor implements Serializable {
 	 */
 	@NotNull
 	private long samplingFrequency;
-	
+	/**
+	 * Sampling frequency 
+	 */
+	@NotNull
+	private long statementFrequency;
+
 	public Sensor() {
 		// for hibernate
 	}
@@ -129,23 +143,48 @@ public class Sensor implements Serializable {
 		this.lowBattery = lowBattery;
 	}
 	
-	public Point2D.Double getGpsLocation() {
-		return gpsLocation;
+	public double getLongitude() {
+		return longitude;
 	}
 
-	public void setGpsLocation(Point2D.Double gpsLocation) {
-		this.gpsLocation = gpsLocation;
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
 	}
 
-	private void setId(int id) {
-		this.id = id;
+	public double getLatitude() {
+		return latitude;
 	}
 
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	public long getStatementFrequency() {
+		return statementFrequency;
+	}
+
+	public void setStatementFrequency(long statementFrequency) {
+		this.statementFrequency = statementFrequency;
+	}
+
+	public void setGpsLocation(double latitude, double longitude) {
+		this.latitude = latitude;
+		this.longitude = longitude;
+	}
+	
 	@Override
 	public String toString(){
 		return new StringBuffer(" Id : ").append(getId())
 				.append(" SensorType : ").append(getSensorType())
 				.append(" Fs : ").append(getSamplingFrequency())
+				.append(" Fe : ").append(getStatementFrequency())
 				.append(" unity : ").append(getUnity())
 				.toString();
 	}

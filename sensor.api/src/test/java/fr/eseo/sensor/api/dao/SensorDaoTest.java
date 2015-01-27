@@ -6,7 +6,6 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertEquals;
 
-import java.awt.geom.Point2D;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -53,7 +52,8 @@ public class SensorDaoTest {
 		dao.saveOrUpdate(DataGenerator.getOneSensor(true));
 		Sensor sensor = dao.getOne(1);
 		assertNotNull(sensor);
-		assertEquals(sensor.getGpsLocation(), new Point2D.Double(-0.127512, 51.507222));
+		assertEquals(sensor.getLatitude(), -0.127512, 0.0001);
+		assertEquals(sensor.getLongitude(),51.507222,  0.0001);
 		assertEquals(sensor.getId(), 1);
 		assertEquals(sensor.getSensorType(), SensorType.ARROW);
 	}

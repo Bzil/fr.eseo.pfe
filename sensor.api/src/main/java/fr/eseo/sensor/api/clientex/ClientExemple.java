@@ -5,6 +5,8 @@ package fr.eseo.sensor.api.clientex;
  */
 import java.util.Date;
 
+import javax.ws.rs.core.Response;
+
 import com.sun.jersey.api.client.Client;
 import com.sun.jersey.api.client.ClientResponse;
 import com.sun.jersey.api.client.WebResource;
@@ -29,17 +31,20 @@ public class ClientExemple {
 		input.setUnity("m");
 		input.setAddDate(new Date(System.currentTimeMillis()));
 		input.setLowBattery(false);
+		input.setStatementFrequency(1222);
 		input.setSamplingFrequency(1000);
+		input.setGpsLocation(-0.127512, 51.507222);
+		input.setName("Sensor_Test");
 		input.setSensorType(SensorType.ARROW);
 		try {
 			ClientConfig clientConfig = new DefaultClientConfig();
 			clientConfig.getFeatures().put(JSONConfiguration.FEATURE_POJO_MAPPING, Boolean.TRUE);
 			Client client = Client.create(clientConfig);
 						
-			WebResource webResource = client.resource("http://localhost:8080/sensorAPI/rest/sensor/post/");
+			WebResource webResource = client.resource("http://localhost:8080/WeatherBase/rest/sensor/post/");
 			ClientResponse response = webResource.accept("application/json").type("application/json").post(ClientResponse.class, input);
 
-			if (response.getStatus() != 201) {
+			if (response.getStatus() != Response.Status.CREATED.getStatusCode()) {
 				throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
 			}
 			String output = response.getEntity(String.class);
@@ -55,7 +60,10 @@ public class ClientExemple {
 		Sensor sensor = new Sensor();
 		sensor.setAddDate(new Date(System.currentTimeMillis()));
 		sensor.setUnity("s");
+		sensor.setStatementFrequency(1222);
+		sensor.setName("Sensor_Test");
 		sensor.setSensorType(SensorType.GRAPH);
+		sensor.setGpsLocation(-0.127512, 51.507222);
 		Data input = new Data();
 		input.setDate(System.currentTimeMillis());
 		input.setIsOnPhone(false);
@@ -66,10 +74,10 @@ public class ClientExemple {
 			clientConfig.getFeatures().put(JSONConfiguration.FEATURE_POJO_MAPPING, Boolean.TRUE);
 			Client client = Client.create(clientConfig);
 			
-			WebResource webResource = client.resource("http://localhost:8080/sensorAPI/rest/data/post/");
+			WebResource webResource = client.resource("http://localhost:8080/WeatherBase/rest/data/post/");
 			ClientResponse response = webResource.accept("application/json").type("application/json").post(ClientResponse.class, input);
 
-			if (response.getStatus() != 201) {
+			if (response.getStatus() != Response.Status.CREATED.getStatusCode()) {
 				throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
 			}
 			String output = response.getEntity(String.class);
