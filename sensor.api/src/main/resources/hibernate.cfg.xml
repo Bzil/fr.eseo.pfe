@@ -32,7 +32,7 @@
 		 <property name="hibernate.hbm2ddl.auto">validate</property> -->  
        	
        	<!-- Pour maj un schéma existant
-		 <property name="hibernate.hbm2ddl.auto">validate</property> -->  
+		 <property name="hibernate.hbm2ddl.auto">update</property> -->  
 		  
        	<property name="hibernate.transaction.auto_close_session">true</property>
        	
