@@ -36,16 +36,6 @@ CREATE TABLE `Data` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Data`
---
-
-LOCK TABLES `Data` WRITE;
-/*!40000 ALTER TABLE `Data` DISABLE KEYS */;
-INSERT INTO `Data` VALUES (1,'2015-01-29 10:40:23','F',0,'11',NULL);
-/*!40000 ALTER TABLE `Data` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `Sensor`
 --
 
@@ -68,16 +58,6 @@ CREATE TABLE `Sensor` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Sensor`
---
-
-LOCK TABLES `Sensor` WRITE;
-/*!40000 ALTER TABLE `Sensor` DISABLE KEYS */;
-INSERT INTO `Sensor` VALUES (1,'2015-01-29 00:00:00',-0.127512,51.507222,'F','Sensor_Arrow',1000,'ARROW',1222,'m'),(2,'2015-01-29 00:00:00',-0.12712,2.07222,'F','Sensor_Graph',1050,'GRAPH',1322,'s');
-/*!40000 ALTER TABLE `Sensor` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `User`
 --
 
@@ -93,16 +73,6 @@ CREATE TABLE `User` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `User`
---
-
-LOCK TABLES `User` WRITE;
-/*!40000 ALTER TABLE `User` DISABLE KEYS */;
-/*!40000 ALTER TABLE `User` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

@@ -2,7 +2,6 @@ package fr.eseo.sensor.api.bean;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
-import java.util.Date;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

@@ -89,24 +89,30 @@ public class SensorService {
 	}
 	/**
 	 * Service to Add one sensor
+	 * @param name of the sensor
 	 * @param date of add
 	 * @param unity of measure
 	 * @param sensorType king of graph
 	 * @param samplingFrequency frequency of measure
+	 * @param statementFrequency frequency of statement
 	 * @return response in json
 	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)    
-	@Path("post")
+	@Path("post/param")
 	public Response createSensorInJSON(
+			@FormParam("name") String name,
 			@FormParam("date") String date,
 			@FormParam("unity") String unity,
 			@FormParam("sensorType") String sensorType,
-			@FormParam("samplingFrequency") long samplingFrequency
+			@FormParam("samplingFrequency") long samplingFrequency,
+			@FormParam("statementFrequency") long statementFrequency
 			) {
 		Sensor sensor = new Sensor();
+		sensor.setName(name);
 		sensor.setUnity(unity);
 		sensor.setSamplingFrequency(samplingFrequency);
+		sensor.setStatementFrequency(statementFrequency);
 		sensor.setSensorType(SensorType.valueOf(sensorType));
 		try {
 			sensor.setAddDate(DATE_FORMATTER.parse(date));

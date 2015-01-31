@@ -99,6 +99,8 @@ public class DataService {
 	@Consumes({MediaType.APPLICATION_JSON}) 
 	@Path("/post")
 	public Response createDataInJSON(Data data) {
+		SensorDao sensorDao = new SensorDao();
+		data.setSensor(sensorDao.getOne(data.getSensorId()));
 		dataDao.saveOrUpdate(data);
 		String result = "Data saved : " + data;
 		return Response.status(Response.Status.CREATED).entity(result).build();
@@ -113,8 +115,11 @@ public class DataService {
 	 */
 	@POST
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)    
-	@Path("/post")
-	public Response createDataInJSON(@FormParam("date") String date,@FormParam("value") String value,@FormParam("sensorId") String sensorId) {
+	@Path("/post/param")
+	public Response createDataInJSON(
+			@FormParam("date") String date,
+			@FormParam("value") String value,
+			@FormParam("sensorId") String sensorId) {
 		Data data = new Data();
 		SensorDao sensorDao = new SensorDao();
 		data.setValue(value);

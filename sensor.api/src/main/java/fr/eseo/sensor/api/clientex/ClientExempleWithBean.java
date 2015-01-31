@@ -18,10 +18,10 @@ import fr.eseo.sensor.api.bean.Data;
 import fr.eseo.sensor.api.bean.Sensor;
 import fr.eseo.sensor.api.bean.SensorType;
 
-public class ClientExemple {
+public class ClientExempleWithBean {
 
 	public static void main(String[] args) {
-		ClientExemple ce = new ClientExemple();
+		ClientExempleWithBean ce = new ClientExempleWithBean();
 		ce.addSensorEx();
 		ce.addSensorEx2();
 		ce.addDataEx();
@@ -89,6 +89,10 @@ public class ClientExemple {
 		}
 	}
 	private void addDataEx(){
+		/*
+		 SensorDao dao = new SensorDao();
+		Sensor sensor = dao.getOne(1);
+		*/
 		Sensor sensor = new Sensor();
 		sensor.setAddDate(new Date(System.currentTimeMillis()));
 		sensor.setUnity("s");
@@ -101,6 +105,8 @@ public class ClientExemple {
 		input.setIsOnPhone(false);
 		input.setValue("11");
 		input.setSensor(sensor);
+		
+		input.setSensorId(1);
 		try {
 			ClientConfig clientConfig = new DefaultClientConfig();
 			clientConfig.getFeatures().put(JSONConfiguration.FEATURE_POJO_MAPPING, Boolean.TRUE);
