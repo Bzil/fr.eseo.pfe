@@ -124,7 +124,7 @@ public class Data implements Serializable{
 				.append(" Value : ").append(getValue())
 				.append(" Sensor Id : ").append((getSensor() != null) ? this.getSensor().getId() : "null")
 				.append(" Date : ").append(getDate())
-				.append(" On Phone :").append(getIsOnPhone())
+				.append(" On Phone : ").append(getIsOnPhone())
 				.toString();
 	}
 

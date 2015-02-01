@@ -136,24 +136,26 @@ public class SensorService {
 		return sensorDao.getLastest(Integer.parseInt(size));
 	}
 
-	@PUT
+	@POST
 	@Path("{id}")
-	@Consumes(MediaType.APPLICATION_JSON)
-	//@Produces({ MediaType.TEXT_HTML })
-	public Response putPodcastById(@PathParam("id") int id, Sensor sensor) {
+	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+	public Response editSensorById(
+			@PathParam("id") int id,
+			@FormParam("unity") String unity,
+			@FormParam("name") String name,
+			@FormParam("statementFrequency") long statementFrequency,
+			@FormParam("samplingFrenquency") long samplingFrequency ) {
+		Sensor sensor = sensorDao.getOne(id);
+		if(sensor != null){
+			if(!unity.equals("-1") && !unity.equals(sensor.getUnity())) sensor.setUnity(unity);
+			if(!name.equals("-1") && !name.equals(sensor.getName())) sensor.setName(name);
+			if(samplingFrequency != -1 && samplingFrequency != sensor.getSamplingFrequency()) sensor.setSamplingFrequency(samplingFrequency);
+			if(statementFrequency != -1 && statementFrequency != sensor.getStatementFrequency()) sensor.setStatementFrequency(statementFrequency);
 
-		Sensor podcastById = sensorDao.getOne(id);
-
-		if (podcastById == null) {
-			// resource not existent yet, and should be created under the
-			// specified URI
-			sensorDao.saveOrUpdate(sensor);
-			return Response.status(Response.Status.CREATED).entity("Data saved : " + sensor).build();
-		} else {
-			// resource is existent and a full update should occur
-			sensorDao.update(sensor);;
+			sensorDao.update(sensor);
 			return Response.status(Response.Status.OK).entity("Data saved : " + sensor).build();
 		}
+		return Response.status(Response.Status.BAD_REQUEST).entity("Data saved : " + sensor).build();
 	}
 
 	public SensorDao getSensorDao() {
@@ -163,4 +165,5 @@ public class SensorService {
 	public void setSensorDao(SensorDao sensorDao) {
 		this.sensorDao = sensorDao;
 	}
+
 }

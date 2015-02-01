@@ -129,7 +129,7 @@ public class DataService {
 		} catch ( ParseException e){
 			data.setDate(System.currentTimeMillis());
 		}
-
+		data.setIsOnPhone(false);
 		dataDao.saveOrUpdate(data);
 		String result = "Data saved : " + data;
 		return Response.status(Response.Status.CREATED).entity(result).build();       

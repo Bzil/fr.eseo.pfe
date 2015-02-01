@@ -20,6 +20,8 @@ import fr.eseo.sensor.api.bean.SensorType;
 
 public class ClientExempleWithBean {
 
+	private static String URL_SERVEUR = "http://localhost:8080/WeatherBase";
+	
 	public static void main(String[] args) {
 		ClientExempleWithBean ce = new ClientExempleWithBean();
 		ce.addSensorEx();
@@ -42,8 +44,8 @@ public class ClientExempleWithBean {
 			clientConfig.getFeatures().put(JSONConfiguration.FEATURE_POJO_MAPPING, Boolean.TRUE);
 			Client client = Client.create(clientConfig);
 						
-			WebResource webResource = client.resource("http://localhost:8080/WeatherBase/rest/sensor/post/");
-			ClientResponse response = webResource.accept("application/json").type("application/json").post(ClientResponse.class, input);
+			WebResource webResource = client.resource(URL_SERVEUR);
+			ClientResponse response = webResource.path("rest").path("sensor").path("post").accept("application/json").type("application/json").post(ClientResponse.class, input);
 
 			if (response.getStatus() != Response.Status.CREATED.getStatusCode()) {
 				throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
@@ -73,8 +75,8 @@ public class ClientExempleWithBean {
 			clientConfig.getFeatures().put(JSONConfiguration.FEATURE_POJO_MAPPING, Boolean.TRUE);
 			Client client = Client.create(clientConfig);
 						
-			WebResource webResource = client.resource("http://localhost:8080/WeatherBase/rest/sensor/post/");
-			ClientResponse response = webResource.accept("application/json").type("application/json").post(ClientResponse.class, input);
+			WebResource webResource = client.resource(URL_SERVEUR);
+			ClientResponse response = webResource.path("rest").path("sensor").path("post").accept("application/json").type("application/json").post(ClientResponse.class, input);
 
 			if (response.getStatus() != Response.Status.CREATED.getStatusCode()) {
 				throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
@@ -112,8 +114,8 @@ public class ClientExempleWithBean {
 			clientConfig.getFeatures().put(JSONConfiguration.FEATURE_POJO_MAPPING, Boolean.TRUE);
 			Client client = Client.create(clientConfig);
 			
-			WebResource webResource = client.resource("http://localhost:8080/WeatherBase/rest/data/post/");
-			ClientResponse response = webResource.accept("application/json").type("application/json").post(ClientResponse.class, input);
+			WebResource webResource = client.resource(URL_SERVEUR);
+			ClientResponse response = webResource.path("rest").path("data").path("post").accept("application/json").type("application/json").post(ClientResponse.class, input);
 
 			if (response.getStatus() != Response.Status.CREATED.getStatusCode()) {
 				throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());

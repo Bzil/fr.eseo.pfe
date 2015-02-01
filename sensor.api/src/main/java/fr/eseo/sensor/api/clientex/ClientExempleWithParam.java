@@ -16,12 +16,16 @@ import fr.eseo.sensor.api.bean.SensorType;
 
 public class ClientExempleWithParam {
 
+	private static String URL_SERVEUR = "http://localhost:8080/WeatherBase";
+	
 	public static void main(String[] args) {
 		ClientExempleWithParam ce = new ClientExempleWithParam();
 		System.out.println("Add sensor");
 		ce.addSensorEx();
 		System.out.println("Add Data");
 		ce.addDataEx();
+		System.out.println("Edit Sensor");
+		ce.editSensorEx();
 	}
 
 
@@ -38,7 +42,7 @@ public class ClientExempleWithParam {
 			clientConfig.getFeatures().put(JSONConfiguration.FEATURE_POJO_MAPPING, Boolean.TRUE);
 			Client client = Client.create(clientConfig);
 
-			WebResource webResource = client.resource("http://localhost:8080/WeatherBase");
+			WebResource webResource = client.resource(URL_SERVEUR);
 			ClientResponse response = webResource.path("rest").path("sensor").path("post").path("param").type(MediaType.APPLICATION_FORM_URLENCODED).post(ClientResponse.class, form);
 
 			if (response.getStatus() != Response.Status.CREATED.getStatusCode()) {
@@ -48,9 +52,7 @@ public class ClientExempleWithParam {
 			System.out.println("Sensor : " + output);
 
 		} catch (Exception e) {
-
 			e.printStackTrace();
-
 		}
 	}
 
@@ -64,14 +66,14 @@ public class ClientExempleWithParam {
 			clientConfig.getFeatures().put(JSONConfiguration.FEATURE_POJO_MAPPING, Boolean.TRUE);
 			Client client = Client.create(clientConfig);
 
-			WebResource webResource = client.resource("http://localhost:8080/WeatherBase");
+			WebResource webResource = client.resource(URL_SERVEUR);
 			ClientResponse response = webResource.path("rest").path("data").path("post").path("param").type(MediaType.APPLICATION_FORM_URLENCODED).post(ClientResponse.class, form);
 
 			if (response.getStatus() != Response.Status.CREATED.getStatusCode()) {
 				throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
 			}
 			String output = response.getEntity(String.class);
-			System.out.println("Sensor : " + output);
+			System.out.println("Data : " + output);
 
 		} catch (Exception e) {
 
@@ -80,5 +82,29 @@ public class ClientExempleWithParam {
 		}
 	}
 
+	private void editSensorEx(){
+		Form form = new Form();
+		form.add("unity", "km/h");
+		form.add("name", "-1");
+		form.add("statementFrequency", -1);
+		form.add("samplingFrenquency", 1234);
+		
+		try {
+			ClientConfig clientConfig = new DefaultClientConfig();
+			clientConfig.getFeatures().put(JSONConfiguration.FEATURE_POJO_MAPPING, Boolean.TRUE);
+			Client client = Client.create(clientConfig);
 
+			WebResource webResource = client.resource(URL_SERVEUR);
+			ClientResponse response = webResource.path("rest").path("sensor").path("1").type(MediaType.APPLICATION_FORM_URLENCODED).post(ClientResponse.class, form);
+
+			if (response.getStatus() != Response.Status.OK.getStatusCode()) {
+				throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());
+			}
+			String output = response.getEntity(String.class);
+			System.out.println("Sensor : " + output);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
