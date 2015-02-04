@@ -16,7 +16,7 @@ import javax.xml.bind.annotation.XmlTransient;
 import org.hibernate.annotations.Type;
 
 /**
- * Class who define the data send by the sensor
+ * Classe définissant une donnée envoyée par un capteur
  * @author Basile CHAPELLIER
  * @version 1.0
  */
@@ -30,34 +30,33 @@ public class Data implements Serializable{
 	 */
 	private static final long serialVersionUID = 7783315427114107586L;
 	/**
-	 * Unique id
+	 * Identifiant unique de la donnée.
 	 */
 	@Id
 	@GeneratedValue
 	private int id;
 	/**
-	 * the date of the mesure
+	 * Date de la mesure.
 	 */
 	@NotNull
 	private Timestamp date;
 	/**
-	 * 
-	 */
-	private int sensorId;
-	/**
-	 * The value of the data
+	 * Valeur de la donnée reçue.
 	 */
 	@NotNull
 	private String value;
 	/**
-	 * Boolean to check if the data is on any smartphone
+	 * Validation de l'exportation de la données en base.
 	 */
 	@NotNull
 	@Type(type="true_false")
 	private Boolean isOnPhone;
-
 	/**
-	 * the sensor where the data come from
+	 * Id du sensor, utilisé pour éviter la boucle infini avec la persistance du capteur.
+	 */
+	private int sensorId;
+	/**
+	 * Le capteur qui envoie les données
 	 */
 	@XmlTransient
 	@ManyToOne

@@ -10,9 +10,9 @@ import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
 /***
- * This class defini the user who can access the data
+ * Classe définisant un utilisateur
  * @author Basile Chapellier
- *	@version 1.0
+ * @version 1.0
  */
 
 @Entity
@@ -24,39 +24,40 @@ public class User implements Serializable{
 	 */
 	private static final long serialVersionUID = 6372470904979536158L;
 	/**
-	 * Unique id
+	 * Identifiant unique
 	 */
 	@Id
 	@GeneratedValue
 	private int id;
 	/**
-	 * last name of the user
+	 * Nom de famille de l'utilisateur
 	 */
 	@NotNull
 	private String lastName;
 	/**
-	 * first name of the user
+	 * Prénom de l'utilisateur
 	 */
 	@NotNull
 	private String firstName;
 	/**
-	 * last date of connection
+	 * Date de dernière connexion
 	 */
 	private Date lastConnection;
+	/**
+	 * Rôles de l'utilisateur
+	 */
 	@Enumerated
 	private UserRole userRole;
+	/**
+	 * Mot de passe de l'utilisateur
+	 */
+	//TODO hash pwd
+	private String password;
 	
 	public User() {
 		// for hibernate
 	}
 
-	public User(String lastName, String firstName, Date lastConnection,	UserRole userRole) {
-		super();
-		this.lastName = lastName;
-		this.firstName = firstName;
-		this.lastConnection = lastConnection;
-		this.userRole = userRole;
-	}
 
 	public String getLastName() {
 		return lastName;
@@ -94,4 +95,20 @@ public class User implements Serializable{
 		return id;
 	}
 
+	public UserRole getUserRole() {
+		return userRole;
+	}
+
+	public void setUserRole(UserRole userRole) {
+		this.userRole = userRole;
+	}
+
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}	
 }

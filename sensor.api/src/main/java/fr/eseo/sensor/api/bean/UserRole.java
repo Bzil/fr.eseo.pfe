@@ -1,20 +1,20 @@
 package fr.eseo.sensor.api.bean;
 /**
- * Enum who define role of the user
- * @author Basile Chapellier
+ * Enumération des roles possibles
+ * @author Basile CHAPELLIER
  * @version 1.0
  */
 public enum UserRole {
 	/**
-	 * This role can manage sensor and view
+	 * Peut mananger les capteurs, utilisateurs, possède les droits de vue des données.
 	 */
 	ADMIN,
 	/**
-	 * This role can view the data
+	 * Peut voir les informations relatives aux capteurs (données, fréquences...)
 	 */
 	VIEWER,
 	/**
-	 * This role can just see global informations
+	 * Peut juste voir les information globales, liste des capteurs
 	 */
 	GUEST
 }

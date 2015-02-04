@@ -1,6 +1,8 @@
 package fr.eseo.sensor.api.clientex;
 
-import javax.ws.rs.FormParam;
+import java.text.SimpleDateFormat;
+import java.util.Random;
+
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -16,24 +18,28 @@ import fr.eseo.sensor.api.bean.SensorType;
 
 public class ClientExempleWithParam {
 
-	private static String URL_SERVEUR = "http://localhost:8080/WeatherBase";
-	
+	private static String URL_SERVEUR = "http://192.168.4.191:8080/WeatherBase";
+
 	public static void main(String[] args) {
 		ClientExempleWithParam ce = new ClientExempleWithParam();
 		System.out.println("Add sensor");
 		ce.addSensorEx();
 		System.out.println("Add Data");
-		ce.addDataEx();
-		System.out.println("Edit Sensor");
-		ce.editSensorEx();
+		Random rand = new Random();
+		int i = 0;
+		while(true){
+		//for(int i = 0; i<50; i++){
+			ce.addDataEx("02-02-2014 00:" + i * 10 + ":03",String.valueOf(rand.nextInt(150)),"1"); //10 * Math.sin(i*0.1)
+			i++;
+		}
 	}
 
 
 	private void addSensorEx(){
 		Form form = new Form();
-		form.add("name", "TEST_Param");
+		form.add("name", "Capteur_Vent");
 		form.add("date", "2015-01-31 17:14:06");
-		form.add("unity", "ms");
+		form.add("unity", "m/s");
 		form.add("sensorType", SensorType.GRAPH.toString());
 		form.add("samplingFrequency", 1222);
 		form.add("statementFrequency", 1000);
@@ -56,11 +62,11 @@ public class ClientExempleWithParam {
 		}
 	}
 
-	private void addDataEx(){
+	private void addDataEx(String date, String value, String sensorId){
 		Form form = new Form();
-		form.add("date", "2012-01-31 17:14:06");
-		form.add("value", "2222");
-		form.add("sensorId", "1");
+		form.add("date", date);
+		form.add("value", value);
+		form.add("sensorId", sensorId);
 		try {
 			ClientConfig clientConfig = new DefaultClientConfig();
 			clientConfig.getFeatures().put(JSONConfiguration.FEATURE_POJO_MAPPING, Boolean.TRUE);
@@ -84,18 +90,18 @@ public class ClientExempleWithParam {
 
 	private void editSensorEx(){
 		Form form = new Form();
-		form.add("unity", "km/h");
-		form.add("name", "-1");
+		form.add("unity", "mm");
+		form.add("name", "Capteur_Pluie");
 		form.add("statementFrequency", -1);
 		form.add("samplingFrenquency", 1234);
-		
+
 		try {
 			ClientConfig clientConfig = new DefaultClientConfig();
 			clientConfig.getFeatures().put(JSONConfiguration.FEATURE_POJO_MAPPING, Boolean.TRUE);
 			Client client = Client.create(clientConfig);
 
 			WebResource webResource = client.resource(URL_SERVEUR);
-			ClientResponse response = webResource.path("rest").path("sensor").path("1").type(MediaType.APPLICATION_FORM_URLENCODED).post(ClientResponse.class, form);
+			ClientResponse response = webResource.path("rest").path("sensor").path("2").type(MediaType.APPLICATION_FORM_URLENCODED).post(ClientResponse.class, form);
 
 			if (response.getStatus() != Response.Status.OK.getStatusCode()) {
 				throw new RuntimeException("Failed : HTTP error code : " + response.getStatus());

@@ -1,6 +1,5 @@
 package fr.eseo.sensor.api.util;
 
-import java.awt.geom.Point2D;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 

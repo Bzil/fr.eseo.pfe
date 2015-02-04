@@ -1,6 +1,5 @@
 package fr.eseo.sensor.api.service;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
@@ -12,12 +11,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import fr.eseo.sensor.api.bean.Data;
-import fr.eseo.sensor.api.bean.Sensor;
-import fr.eseo.sensor.api.bean.SensorType;
 import fr.eseo.sensor.api.bean.User;
-import fr.eseo.sensor.api.dao.DataDao;
-import fr.eseo.sensor.api.dao.SensorDao;
 import fr.eseo.sensor.api.dao.UserDao;
 
 /**

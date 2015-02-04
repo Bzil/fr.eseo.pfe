@@ -9,7 +9,6 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.FormParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -119,7 +118,7 @@ public class SensorService {
 		} catch ( ParseException e){
 			sensor.setAddDate(new Date(System.currentTimeMillis()));
 		}
-
+		sensor.setLowBattery(false);
 		sensorDao.saveOrUpdate(sensor);
 		String result = "Data saved : " + sensor;
 		return Response.status(Response.Status.CREATED).entity(result).build();       
@@ -135,7 +134,15 @@ public class SensorService {
 	public List<Sensor> getLastData(@PathParam("size") String size){
 		return sensorDao.getLastest(Integer.parseInt(size));
 	}
-
+	/**
+	 * Method to edit data form sensor
+	 * @param id of the sensor
+	 * @param unity new value of unity, -1 if unchange
+	 * @param name new value of name, -1 if unchange
+	 * @param statementFrequency new value of statementFrequency, -1 if unchange
+	 * @param samplingFrequency new value ofsamplingFrequency, -1 if unchange
+	 * @return OK if success else FAILED 
+	 */
 	@POST
 	@Path("{id}")
 	@Consumes(MediaType.APPLICATION_FORM_URLENCODED)

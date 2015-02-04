@@ -6,8 +6,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-import fr.eseo.sensor.api.bean.User;
-
 /**
  * <h1>Manager class which allows to make the transactions to the database.</h1>
  * <h1>This class is never instanced, it is extended by other manager classes existing.</h1>

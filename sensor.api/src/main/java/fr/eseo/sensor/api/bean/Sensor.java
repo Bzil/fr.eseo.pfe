@@ -1,6 +1,5 @@
 package fr.eseo.sensor.api.bean;
 
-import java.awt.geom.Point2D;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
@@ -18,7 +17,6 @@ import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 import org.hibernate.annotations.Type;
 /**
@@ -37,40 +35,40 @@ public class Sensor implements Serializable {
 	 */
 	private static final long serialVersionUID = -8908304865712781641L;
 	/**
-	 * Unique id
+	 * Identifiant unique
 	 */
 	@Id
 	@GeneratedValue
 	private int id;
 	/**
-	 * Date where sensor had been add to the app
+	 * Date d'ajout du capteur à la station.
 	 */
 	@NotNull
 	private Date addDate;
 	/**
-	 * Type of the data, unity
+	 * Unité de la donnée.
 	 */
 	@NotNull
 	private String unity;
 	/**
-	 * Define what type of graphic
+	 * Type de graphique
 	 */
 	@NotNull
 	@Enumerated(EnumType.STRING)
 	private SensorType sensorType;	
 	/**
-	 * Boolean to check battery of sensor, by default false
+	 * Etat de la batterie, faux par défaut
 	 */
 	@NotNull
 	@Type(type="true_false")
 	private Boolean lowBattery;
 	/**
-	 * Location of the sensor, should be send by smartphone
+	 * Localisation sur capteur.
 	 */
 	private double longitude;
 	private double latitude;
 	/**
-	 * Name of the sensor
+	 * Nom du capteur
 	 */
 	private String name;
 	
@@ -186,6 +184,7 @@ public class Sensor implements Serializable {
 				.append(" Fs : ").append(getSamplingFrequency())
 				.append(" Fe : ").append(getStatementFrequency())
 				.append(" unity : ").append(getUnity())
+				.append(" Low Battery : ").append(getLowBattery())
 				.toString();
 	}
 

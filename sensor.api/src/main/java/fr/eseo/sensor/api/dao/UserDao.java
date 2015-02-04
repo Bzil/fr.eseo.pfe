@@ -8,7 +8,6 @@ import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import fr.eseo.sensor.api.bean.Sensor;
 import fr.eseo.sensor.api.bean.User;
 /**
  * Specific dao for user

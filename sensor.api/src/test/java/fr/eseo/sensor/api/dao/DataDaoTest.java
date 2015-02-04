@@ -1,18 +1,18 @@
 package fr.eseo.sensor.api.dao;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
+import org.apache.commons.lang.builder.EqualsBuilder;
 import org.hibernate.Session;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.apache.commons.lang.builder.EqualsBuilder;
 
 import fr.eseo.sensor.api.bean.Data;
 import fr.eseo.sensor.api.bean.Sensor;
