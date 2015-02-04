@@ -10,6 +10,7 @@ import static org.mockito.Mockito.doReturn;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.ws.rs.FormParam;
 import javax.ws.rs.core.Response;
 
 import org.junit.Before;
@@ -119,15 +120,15 @@ public class SensorServiceTest {
 
 		Response r = ss.createSensorInJSON(s);
 		assertEquals(201,r.getStatus());
-		assertEquals("Data saved :  Id : 0 SensorType : ARROW Fs : 0 Fe : 1222 unity : m", r.getEntity().toString());
+		assertEquals("Data saved :  Id : 0 SensorType : ARROW Fs : 0 Fe : 1222 unity : m Low Battery : false", r.getEntity().toString());
 	}
 	
 	@Test
 	public void testCreateSensorInJSONWithParameter(){
 		doNothing().when(daoMock).saveOrUpdate(any(Sensor.class));;
 
-		Response r = ss.createSensorInJSON("18-11-1990 00:00:00", "m", "ARROW", (long)0);
+		Response r = ss.createSensorInJSON("test", "18-11-1990 00:00:00", "m", "ARROW", (long)0, (long)0);
 		assertEquals(201,r.getStatus());
-		assertEquals("Data saved :  Id : 0 SensorType : ARROW Fs : 0 Fe : 0 unity : m", r.getEntity().toString());
+		assertEquals("Data saved :  Id : 0 SensorType : ARROW Fs : 0 Fe : 0 unity : m Low Battery : false", r.getEntity().toString());
 	}
 }

@@ -68,7 +68,7 @@ public class SensorService {
 		return sensorDao.getOne(Integer.parseInt(id));
 	}
 	@GET
-	@Path("lowbattery")
+	@Path("sensors/lowbattery")
 	@Produces(MediaType.APPLICATION_JSON + ";charset=" + ENCODING)
 	public List<Sensor> getSensorWhithoutBattery(){
 		return sensorDao.getAllSensorWithLowBattery();
