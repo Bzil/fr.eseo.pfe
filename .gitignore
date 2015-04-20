@@ -1,4 +1,11 @@
 /target/
 .metadata
-RemoteSystemsTempFiles
+RemoteSystemsTempFiles/
 .DS_Store
+
+.project
+.metadata
+.classpath
+test.launch
+.settings
+*.class
